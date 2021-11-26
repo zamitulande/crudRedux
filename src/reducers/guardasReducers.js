@@ -1,6 +1,7 @@
 //cada reducer tiene su propio state
 const initialState={
     guardas:[],
+    dotacion:[],
     error: null,
     loading: false
 }

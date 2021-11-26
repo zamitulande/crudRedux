@@ -3,7 +3,7 @@ import React from 'react';
 const Dotacion = () => {
     return (
         <div className="row justify-content-center">
-        <div className="col-md-8">
+        <div className="col-md-4">
             <div className="card">
                 <div className="card-body">
                     
@@ -11,7 +11,7 @@ const Dotacion = () => {
                     <div className="form-group">
                             <label>Camisa</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="camisa"
                             />
@@ -19,7 +19,7 @@ const Dotacion = () => {
                         <div className="form-group">
                             <label>Pantalon </label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="pantalon"
                             />
@@ -27,15 +27,15 @@ const Dotacion = () => {
                         <div className="form-group">
                             <label>Gorra</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
-                                nombre="eps"
+                                nombre="gorra"
                             />
                         </div>
                         <div className="form-group">
                             <label>Zapatos</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="zapatos"
                             />
@@ -43,7 +43,7 @@ const Dotacion = () => {
                         <div className="form-group">
                             <label>Corbata</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="corbata"
                             />
@@ -51,7 +51,7 @@ const Dotacion = () => {
                         <div className="form-group">
                             <label>Chaqueta</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="chaqueta"
                             />
@@ -59,7 +59,7 @@ const Dotacion = () => {
                         <div className="form-group">
                             <label>Oberol</label>
                             <input
-                                type="radio"
+                                type="text"
                                 className="form-control"                                
                                 nombre="oberol"
                             />
@@ -70,7 +70,7 @@ const Dotacion = () => {
                                 type="date"
                                 className="form-control"
                                 placeholder="cantidad"
-                                nombre="corbata"
+                                nombre="fecha"
                            />
                            </div>
                              <button
