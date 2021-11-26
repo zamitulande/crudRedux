@@ -8,10 +8,15 @@ import Dotacion from './components/Dotacion';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Switch} from 'react-router';
 
+//importaciones redux
+import {Provider} from 'react-redux';
+import store from './store';
+
 
 function App() {
   return (
     <Router>
+      <Provider store={store}>
          <Header/>
          <div className="container mt-5">
               <Switch>
@@ -22,6 +27,7 @@ function App() {
               </Switch>
 
          </div>
+         </Provider>
     </Router>
   );
 }
