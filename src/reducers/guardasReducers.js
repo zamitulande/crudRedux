@@ -15,6 +15,17 @@ const initialState={
 }
 export default function(state = initialState, action){
     switch(action.type){
+        case AGREGAR_GUARDA:
+            return{
+                ...state,
+                loading:action.payload
+            }
+        case AGREGAR_GUARDA_EXITO:
+            return{
+                ...state,
+                loading: false,
+                guardas:[...state.guardas, action.payload]
+            }
         default:
             return state;
     }
