@@ -1,0 +1,11 @@
+{
+    "guardas":[
+        {
+            "cedula": "123456",
+            "nombre": "juan",
+            "eps": "sanitas",
+            "fondo": "porvenir",
+            "fecha": "15/02/2021"
+        }
+    ]
+}
