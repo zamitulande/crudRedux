@@ -1,7 +1,31 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+//importar action de redux
+import {crearNuevoGuardaAction} from '../actions/guardaAction';
 
 const NuevoGuarda = () => {
+
+    //utlizar use dispatch y te crea una funcion
+    const dispatch = useDispatch();
+
+    //mandar a llamar el action de productoAction
+    const agregarGuarda=()=> dispatch(crearNuevoGuardaAction());
+
+    //cuando el usuario haga submit osea agregar
+    const submitNuevoGuarda= e => {
+        e.preventDefault();
+
+        //validar formulario
+
+
+        //si no hay errores
+
+        //crear el nuevo guarda
+        agregarGuarda();
+    }
+
     return ( 
         <div className="row justify-content-center">
             <div className="col-md-8">
@@ -11,7 +35,9 @@ const NuevoGuarda = () => {
                             Agregar Nuevo Guarda
                         </h2>
                         
-                        <form>
+                        <form
+                            onSubmit={submitNuevoGuarda}
+                        >
                         <div className="form-group">
                                 <label>Cedula</label>
                                 <input
@@ -59,15 +85,17 @@ const NuevoGuarda = () => {
                             </div>
                             <Link to={"/guarda/nuevo/dotacion"}
                                      className="btn btn-primary nuevo-post  w-100">Dotacion &#43;</Link>
-                                                           
-                        </form>                                                
-                        
-                    </div>
-                    <button
+                            
+                            <button
                                 type="submit"
                                 className="btn btn-primary font-weightbold text-uppercase d-block w-100">
                                     Agregar
                                 </button>
+                                                           
+                        </form>                                                
+                        
+                    </div>
+                    
                 </div>
             </div>
         </div>

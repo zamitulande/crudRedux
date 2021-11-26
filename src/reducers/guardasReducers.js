@@ -1,3 +1,11 @@
+import{
+    AGREGAR_GUARDA,
+    AGREGAR_GUARDA_EXITO,
+    AGREGAR_GUARDA_ERROR
+
+} from '../types';
+
+
 //cada reducer tiene su propio state
 const initialState={
     guardas:[],
