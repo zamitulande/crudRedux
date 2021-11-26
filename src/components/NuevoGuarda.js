@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,23 +7,40 @@ import {crearNuevoGuardaAction} from '../actions/guardaAction';
 
 const NuevoGuarda = () => {
 
+    //state del componenente que tomara los valores de los campos y los guardara
+    const [cedula, setCedula]=useState('');
+    const [nombre, setNombre]=useState('');
+    const [eps, setEps]=useState('');
+    const [fondo, setFondo]=useState('');
+    const [fecha, setFecha]=useState('');
+    
+
+
     //utlizar use dispatch y te crea una funcion
     const dispatch = useDispatch();
 
     //mandar a llamar el action de productoAction
-    const agregarGuarda=()=> dispatch(crearNuevoGuardaAction());
+    const agregarGuarda=(guarda)=> dispatch(crearNuevoGuardaAction(guarda));
 
     //cuando el usuario haga submit osea agregar
     const submitNuevoGuarda= e => {
         e.preventDefault();
 
         //validar formulario
-
+        if(cedula.trim() === '' || nombre.trim() === '' || eps.trim() === '' || fondo.trim() ===''){
+            return;
+        }
 
         //si no hay errores
 
         //crear el nuevo guarda
-        agregarGuarda();
+        agregarGuarda({
+            cedula,
+            nombre,
+            eps,
+            fondo,
+            fecha
+        });
     }
 
     return ( 
@@ -45,6 +62,8 @@ const NuevoGuarda = () => {
                                     className="form-control"
                                     placeholder="Cedula del Guarda"
                                     nombre="cedula"
+                                    value={cedula}
+                                    onChange={e=>setCedula(e.target.value)}
                                 />
                             </div>
                             <div className="form-group">
@@ -54,6 +73,8 @@ const NuevoGuarda = () => {
                                     className="form-control"
                                     placeholder="Nombre del  Guarda"
                                     nombre="nombre"
+                                    value={nombre}
+                                    onChange={e=>setNombre(e.target.value)}
                                 />
                             </div>
                             <div className="form-group">
@@ -63,6 +84,8 @@ const NuevoGuarda = () => {
                                     className="form-control"
                                     placeholder="EPS del Guarda"
                                     nombre="eps"
+                                    value={eps}
+                                    onChange={e=>setEps(e.target.value)}
                                 />
                             </div>
                             <div className="form-group">
@@ -72,6 +95,8 @@ const NuevoGuarda = () => {
                                     className="form-control"
                                     placeholder="Fondo Pensio del Guarda"
                                     nombre="fondo"
+                                    value={fondo}
+                                    onChange={e=>setFondo(e.target.value)}
                                 />
                             </div>
                             <div className="form-group">
@@ -81,6 +106,8 @@ const NuevoGuarda = () => {
                                     className="form-control"
                                     placeholder="Fondo Pension del Guarda"
                                     nombre="fecha"
+                                    value={fecha}
+                                    onChange={e=>setFecha(e.target.value)}
                                 />
                             </div>
                             <Link to={"/guarda/nuevo/dotacion"}

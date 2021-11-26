@@ -6,8 +6,8 @@ import{
 } from '../types';
 
 //crear nuevos guardas
-export function crearNuevoGuardaAction(){
+export function crearNuevoGuardaAction(guarda){
     return()=>{
-        console.log('desde action')
+        console.log(guarda)
     }
 }
