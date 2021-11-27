@@ -6,10 +6,9 @@ import{
 } from '../types';
 
 
-//cada reducer tiene su propio state
+//cada Reducer tiene su propio state
 const initialState={
     guardas:[],
-    dotacion:[],
     error: null,
     loading: false
 }
