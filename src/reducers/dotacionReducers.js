@@ -1,29 +1,29 @@
 import{
-    AGREGAR_GUARDA,
-    AGREGAR_GUARDA_EXITO,
-    AGREGAR_GUARDA_ERROR
+    AGREGAR_DOTACION,
+    AGREGAR_DOTACION_EXITO,
+    AGREGAR_DOTACION_ERROR
 
 } from '../types';
 
 
 //cada reducer tiene su propio state
 const initialState={
-    guardas:[],
+    dotacion:[],
     error: null,
     loading: false
 }
 export default function(state = initialState, action){
     switch(action.type){
-        case AGREGAR_GUARDA:
+        case AGREGAR_DOTACION:
             return{
                 ...state,
                 loading:action.payload
             }
-        case AGREGAR_GUARDA_EXITO:
+        case AGREGAR_DOTACION_EXITO:
             return{
                 ...state,
                 loading: false,
-                guardas:[...state.guardas, action.payload]
+                dotacion:[...state.dotacion, action.payload]
             }
         default:
             return state;

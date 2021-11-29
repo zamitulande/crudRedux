@@ -5,7 +5,7 @@ const Header = () => {
     return ( 
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-betwen">
             <div className="container">
-                <h1><Link to={'/'} className="text-light">Vigilancia Privada - Inicio</Link></h1>
+                <h1><Link to={'/zami'} className="text-light">Vigilancia Privada - Inicio</Link></h1>
             </div>
 
             <Link to={"/guarda/nuevo"}

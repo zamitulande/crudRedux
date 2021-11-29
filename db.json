@@ -5,19 +5,18 @@
             "nombre": "juan",
             "eps": "sanitas",
             "fondo": "porvenir",
-            "fecha": "15/02/2021",
-            "dotacion": [
-                {
-                    "camisa": "1",
-                    "pantalon": "1",
-                    "gorra": "1",
-                    "zapatos": "1",
-                    "corbata": "1",
-                    "chaqueta": "1",
-                    "oberol": "1"
-                }
-            ]
-
+            "fecha": "15/02/2021"            
+        }
+     ],
+     "dotacion": [
+        {
+            "camisa": "1",
+            "pantalon": "1",
+            "gorra": "1",
+            "zapatos": "1",
+            "corbata": "1",
+            "chaqueta": "1",
+            "oberol": "1"
         }
     ]
 }
