@@ -1,9 +1,12 @@
 import React, {Fragment} from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Guardas = () => {
     return (
       <Fragment>
+          <Link to={"/guarda/nuevo"}
+                className="btn btn-danger nuevo-post d-blok d-md-inline-block">Nuevo Guarda &#43;</Link>
           <h2 className="text-center my-5">Listado de Guardas</h2>
 
           <table className="table table-striped">
@@ -16,7 +19,10 @@ const Guardas = () => {
                         <th scope="col">Fecha ingreso</th>
                     </tr>
                 </thead>
+                
+                 
           </table>
+         
       </Fragment>
         
       );

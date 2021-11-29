@@ -44,7 +44,9 @@ const NuevoGuarda = () => {
     }
 
     return ( 
+        
         <div className="row justify-content-center">
+            
             <div className="col-md-8">
                 <div className="card">
                     <div className="card-body">
@@ -110,9 +112,7 @@ const NuevoGuarda = () => {
                                     onChange={e=>setFecha(e.target.value)}
                                 />
                             </div>
-                            <Link to={"/guarda/nuevo/dotacion"}
-                                     className="btn btn-primary nuevo-post  w-100">Dotacion &#43;</Link>
-                            
+                        
                             <button
                                 type="submit"
                                 className="btn btn-primary font-weightbold text-uppercase d-block w-100">

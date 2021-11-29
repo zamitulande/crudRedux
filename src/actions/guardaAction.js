@@ -1,7 +1,10 @@
 import{
     AGREGAR_GUARDA,
     AGREGAR_GUARDA_EXITO,
-    AGREGAR_GUARDA_ERROR
+    AGREGAR_GUARDA_ERROR, 
+    AGREGAR_DOTACION,
+    AGREGAR_DOTACION_EXITO,
+    AGREGAR_DOTACION_ERROR
 
 } from '../types';
 
@@ -29,5 +32,32 @@ const agregarGuardaExito = guarda => ({
 
 //si no se guarda bien, pasa un error
 const agregarGuardaError = ()=>({
+
+});
+
+//crear nueva dotacion
+export function crearNuevoDotacionAction(dotacion){
+    return(dispatch)=>{
+        dispatch(agregarDotacion());
+
+        try {
+            dispatch(agregarDotacionExito(dotacion));
+        } catch (error) {
+            dispatch(agregarDotacionError(true));
+        }
+    }
+}
+const agregarDotacion=()=>({
+    type: AGREGAR_DOTACION,
+    payload: true
+});
+//si se guarda bien la dotacion  en la base de datos
+const agregarDotacionExito = dotacion => ({
+    type: AGREGAR_DOTACION_EXITO,
+    payload: dotacion
+})
+
+//si no se guarda bien, pasa un error
+const agregarDotacionError = ()=>({
 
 })
