@@ -11,6 +11,8 @@ import Guardas from './components/Guardas';
 import NuevoGuarda from './components/NuevoGuarda';
 import NuevaDotacion from './components/nuevaDotacion';
 import Dotaciones from './components/Dotaciones';
+import EditarGuarda from './components/EditarGuarda';
+import EditarDotacion from './components/editarDotacion';
 
 
 
@@ -24,6 +26,9 @@ function App() {
           <Route exact path="/guarda/nuevo" component={NuevoGuarda} />
           <Route exact path="/dotacion" component={NuevaDotacion} />
           <Route exact path="/dotaciones" component={Dotaciones} />
+          <Route exact path="/guarda/editar/:id" component={EditarGuarda} />
+          <Route exact path="/dotacion/editar/:id" component={EditarDotacion} />
+          
           
           
       </Switch>

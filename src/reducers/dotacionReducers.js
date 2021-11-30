@@ -4,7 +4,7 @@ import{
     AGREGAR_DOTACION_ERROR,
     COMENZAR_DESCARGA_DOTACION,
     DESCARGAR_DOTACION_ERROR,
-    DESCARGA_GUARDA_EXITO
+    DESCARGAR_DOTACION_EXITO
 
 } from '../types';
 
@@ -36,7 +36,7 @@ export default function(state = initialState, action){
                 loading: false,
                 error: action.payload
             }
-        case DESCARGA_GUARDA_EXITO:
+        case DESCARGAR_DOTACION_EXITO:
             return{
                 ...state,
                 loading: false,

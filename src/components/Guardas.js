@@ -1,4 +1,5 @@
 import React, {Fragment, useEffect} from 'react';
+import Guarda from './Guarda';
 
 import { Link } from 'react-router-dom';
 
@@ -18,7 +19,14 @@ const Guardas = () => {
         cargarGuardas();
 
         
-    }, [])
+    }, []);
+
+
+    //obtener el state que se obtubo con el codigo de los reducers y el action
+    const guardas = useSelector(state => state.guardas.guardas);
+    console.log(guardas);
+
+
     return (
       <Fragment>
           <Link to={"/guarda/nuevo"}
@@ -35,7 +43,17 @@ const Guardas = () => {
                         <th scope="col">Fecha ingreso</th>
                     </tr>
                 </thead>
-                
+                <tbody>
+                {guardas.length === 0 ? 'No hay Guardas' : (
+                    guardas.map(guarda=>(
+                        <Guarda
+                            key={guarda.id}
+                            guarda={guarda}
+                        
+                        />
+                    ))
+                )}
+                </tbody>
                  
           </table>
          

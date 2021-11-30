@@ -8,6 +8,7 @@ import {crearNuevoDotacionAction} from '../actions/guardaAction';
 const NuevaDotacion = ({history}) => {
 
     //state del componenente que tomara los valores de los campos y los guardara
+    const [nombre, setNombre]=useState('');
     const [camisa, setCamisa]=useState('');
     const [pantalon, setPantalon]=useState('');
     const [gorra, setGorra]=useState('');
@@ -32,7 +33,7 @@ const NuevaDotacion = ({history}) => {
     const submitNuevaDotacion= e => {
         e.preventDefault();
 
-        if(camisa.trim() === '' || pantalon.trim() === '' || gorra.trim() === '' 
+        if(nombre.trim() === '' || camisa.trim() === '' || pantalon.trim() === '' || gorra.trim() === '' 
         || corbata.trim() ==='' || chaqueta.trim() ==='' || oberol.trim() ===''){
             return;
         }
@@ -41,6 +42,7 @@ const NuevaDotacion = ({history}) => {
 
         //crear el nuevo guarda
         agregarDotacion({
+            nombre,
             camisa,
             pantalon,
             gorra,
@@ -63,6 +65,16 @@ const NuevaDotacion = ({history}) => {
                     <form
                             onSubmit={submitNuevaDotacion}
                     >
+                        <div className="form-group">
+                            <label>Nombre</label>
+                            <input
+                                type="text"
+                                className="form-control"                                
+                                nombre="nombre"
+                                value={nombre}
+                                onChange={e=>setNombre(e.target.value)}
+                            />
+                        </div>
                     <div className="form-group">
                             <label>Camisa</label>
                             <input

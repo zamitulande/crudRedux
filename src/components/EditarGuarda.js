@@ -57,8 +57,7 @@ const EditarGuarda = () => {
                                 nombre="fondo"
                             />
                         </div>
-                        <Link to={"/guarda/nuevo/dotacion"}
-                                     className="btn btn-primary nuevo-post  w-100">Dotacion &#43;</Link>
+                    
                         <button
                             type="submit"
                             className="btn btn-primary font-weightbold text-uppercase d-block w-100">

@@ -16,6 +16,11 @@ import{
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
 
+
+//------------------------------------------------------------------------------------------------------------------
+                //GUARDAS
+
+
 //crear nuevos guardas
 export function crearNuevoGuardaAction(guarda){
     return async (dispatch)=>{
@@ -64,6 +69,8 @@ const agregarGuardaError = estado =>({
 });
 
 //---------------------------------------------------------------------------------------------------------------
+
+            //DOTACION
 
 //crear nueva dotacion
 export function crearNuevoDotacionAction(dotacion){
@@ -118,6 +125,7 @@ const agregarDotacionError = estado =>({
 
 //-------------------------------------------------------------------------------------
 
+            //GUARDAS
 
 //funcion que descarga los guardas de la base de datos
 export function obtenerGuardasAction(){
@@ -152,6 +160,8 @@ const  descargaGuardasError = () =>({
 
 
 //--------------------------------------------------------------------------------------------------------
+
+            //DOTACION
 
 //fincion que descarga las dotaciones de la base de datos
 export function obtenerDotacionAction(){

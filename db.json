@@ -9,89 +9,17 @@
       "fecha": "21/11/2021"
     },
     {
-      "id": 2,
-      "cedula": "5050",
-      "nombre": "juan pablo",
-      "eps": "sanitas",
-      "fondo": "fporvenir",
-      "fecha": "15/01/2021"
-    },
-    {
-      "cedula": "101",
-      "nombre": "zami",
-      "eps": "asmet",
-      "fondo": "colpensiones",
-      "fecha": "2021-11-04",
-      "id": 3
-    },
-    {
-      "cedula": "pedro",
-      "nombre": "zami",
-      "eps": "coomeva",
-      "fondo": "colfondos",
-      "fecha": "2021-11-03",
-      "id": 4
-    },
-    {
-      "cedula": "a",
-      "nombre": "aa",
-      "eps": "a",
-      "fondo": "a",
-      "fecha": "2021-11-12",
-      "id": 5
-    },
-    {
-      "cedula": "a",
-      "nombre": "a",
-      "eps": "a",
-      "fondo": "a",
-      "fecha": "2021-11-06",
-      "id": 6
-    },
-    {
-      "cedula": "a",
-      "nombre": "a",
-      "eps": "a",
-      "fondo": "a",
-      "fecha": "2021-11-06",
-      "id": 7
-    },
-    {
-      "cedula": "a",
-      "nombre": "2",
-      "eps": "2",
-      "fondo": "2",
-      "fecha": "2021-11-05",
-      "id": 8
-    },
-    {
-      "cedula": "a",
-      "nombre": "a",
-      "eps": "a",
-      "fondo": "a",
-      "fecha": "2021-11-03",
-      "id": 9
-    },
-    {
-      "cedula": "1061730",
-      "nombre": "zami",
-      "eps": "porveni",
-      "fondo": "colfondos",
-      "fecha": "2021-11-05",
-      "id": 10
-    },
-    {
-      "cedula": "juan",
-      "nombre": "dd",
-      "eps": "44",
-      "fondo": "44",
-      "fecha": "2021-11-25",
-      "id": 11
+      "cedula": "1061730128",
+      "nombre": "zami tulande",
+      "eps": "sanias",
+      "fondo": "porvenir",
+      "fecha": "2021-11-11",
+      "id": 2
     }
   ],
   "dotacion": [
     {
-      "id": 1,
+      "nombre": "zami",
       "camisa": "1",
       "pantalon": "1",
       "gorra": "1",
@@ -99,31 +27,11 @@
       "corbata": "1",
       "chaqueta": "1",
       "oberol": "1",
-      "fecha": "11/11/2021"
+      "fecha": "2021-11-26",
+      "id": 8
     },
     {
-      "id": 2,
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "0",
-      "zapatos": "1",
-      "corbata": "0",
-      "chaqueta": "1",
-      "oberol": "0",
-      "fecha": "23/11/2021"
-    },
-    {
-      "camisa": "5",
-      "pantalon": "6",
-      "gorra": "5",
-      "zapatos": "6",
-      "corbata": "5",
-      "chaqueta": "6",
-      "oberol": "5",
-      "fecha": "2021-11-06",
-      "id": 3
-    },
-    {
+      "nombre": "zami tulande",
       "camisa": "1",
       "pantalon": "1",
       "gorra": "1",
@@ -132,40 +40,7 @@
       "chaqueta": "1",
       "oberol": "1",
       "fecha": "2021-11-10",
-      "id": 4
-    },
-    {
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
-      "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-11-10",
-      "id": 5
-    },
-    {
-      "camisa": "a",
-      "pantalon": "a5a",
-      "gorra": "a5a5",
-      "zapatos": "a",
-      "corbata": "a",
-      "chaqueta": "a",
-      "oberol": "a",
-      "fecha": "2021-11-03",
-      "id": 6
-    },
-    {
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
-      "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-11-25",
-      "id": 7
+      "id": 9
     }
   ]
 }

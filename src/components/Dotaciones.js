@@ -1,5 +1,6 @@
 import React, {Fragment, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import Dotacion from './Dotacion';
 
 //redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +18,10 @@ const Guardas = () => {
         cargarDotacion();
        
     }, [])
+
+    //obtener el state que se obtubo con el codigo de los reducers y el action
+    const dotaciones = useSelector(state => state.dotacion.dotacion);
+    console.log(dotaciones);
     return (
       <Fragment>
           <Link to={"/dotacion"}
@@ -32,9 +37,21 @@ const Guardas = () => {
                         <th scope="col">Gorra</th>
                         <th scope="col">Corbata</th>
                         <th scope="col">Chaqueta</th>
+                        <th scope="col">Fecha</th>
+
                     </tr>
                 </thead>
-                
+                <tbody>
+                {dotaciones.length === 0 ? 'No hay Guardas' : (
+                    dotaciones.map(dotacion=>(
+                        <Dotacion
+                            key={dotacion.id}
+                            dotacion={dotacion}
+                        
+                        />
+                    ))
+                )}
+                </tbody>
                  
           </table>
          
