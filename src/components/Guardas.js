@@ -24,7 +24,7 @@ const Guardas = () => {
 
     //obtener el state que se obtubo con el codigo de los reducers y el action
     const guardas = useSelector(state => state.guardas.guardas);
-    console.log(guardas);
+    
 
 
     return (

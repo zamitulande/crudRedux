@@ -21,7 +21,7 @@ const Guardas = () => {
 
     //obtener el state que se obtubo con el codigo de los reducers y el action
     const dotaciones = useSelector(state => state.dotacion.dotacion);
-    console.log(dotaciones);
+    
     return (
       <Fragment>
           <Link to={"/dotacion"}

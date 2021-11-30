@@ -13,6 +13,7 @@ import NuevaDotacion from './components/nuevaDotacion';
 import Dotaciones from './components/Dotaciones';
 import EditarGuarda from './components/EditarGuarda';
 import EditarDotacion from './components/editarDotacion';
+import Header from './components/Header'
 
 
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <Router>
       <Provider store={store}>
+        <Header/>
       <Switch>
           <Route exact path="/" component={Principal}  /> 
           <Route exact path="/guarda" component={Guardas}  />
