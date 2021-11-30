@@ -63,4 +63,4 @@ const agregarDotacionError = estado =>({
     type: AGREGAR_DOTACION_ERROR,
     payload: estado
 
-})
+});
