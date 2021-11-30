@@ -8,6 +8,7 @@ import{
 
 } from '../types';
 import clienteAxios from '../config/axios';
+import Swal from 'sweetalert2';
 
 //crear nuevos guardas
 export function crearNuevoGuardaAction(guarda){
@@ -20,10 +21,23 @@ export function crearNuevoGuardaAction(guarda){
 
             //si todo sale  bien se actualiza el state
             dispatch(agregarGuardaExito(guarda));
+
+            //alerta de alert2
+            Swal.fire(
+                'Correcto',
+                'El guarda se agrego Correctamente',
+                'success'
+            )
         } catch (err) {
             console.log(err);
             //si hay un error se cambia el state
             dispatch(agregarGuardaError(true));
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Hubo un error',
+                text: 'Hubo un error, intenta de nuevo'
+            })
         }
     }
 }
@@ -49,15 +63,29 @@ export function crearNuevoDotacionAction(dotacion){
         dispatch(agregarDotacion());
 
         try {
-            //insertar datos en la API
+            //insertar datos en la API  
             await clienteAxios.post('/dotacion', dotacion)
 
             //si todo sale  bien se actualiza el state
             dispatch(agregarDotacionExito(dotacion));
+
+            //alerta de alert2
+            Swal.fire(
+                'Correcto',
+                'La dotacion se agrego Correctamente',
+                'success'
+            )
         } catch (err) {
             console.log(err);
             //si hay un error se cambia el state    
             dispatch(agregarDotacionError(true));
+
+            //alerta de error de alert2
+            Swal.fire({
+                icon: 'error',
+                title: 'Hubo un error',
+                text: 'Hubo un error, intenta de nuevo'
+            })
         }
     }
 }

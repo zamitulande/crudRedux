@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 //importar action de redux
 import {crearNuevoDotacionAction} from '../actions/guardaAction';
 
-const NuevaDotacion = () => {
+const NuevaDotacion = ({history}) => {
 
     //state del componenente que tomara los valores de los campos y los guardara
     const [camisa, setCamisa]=useState('');
@@ -50,6 +50,9 @@ const NuevaDotacion = () => {
             oberol,
             fecha
         });
+
+        //una vez se agregue el objeto se redirige al listado
+        history.push('/dotaciones');
     }
     return (
         <div className="row justify-content-center">

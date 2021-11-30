@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 //importar action de redux
 import {crearNuevoGuardaAction} from '../actions/guardaAction';
 
-const NuevoGuarda = () => {
+const NuevoGuarda = ({history}) => {
 
     //state del componenente que tomara los valores de los campos y los guardara
     const [cedula, setCedula]=useState('');
@@ -45,6 +45,9 @@ const NuevoGuarda = () => {
             fondo,
             fecha
         });
+
+        //una vez se agregue el objeto se redirige al listado
+        history.push('/guarda');
     }
 
     return ( 

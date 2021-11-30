@@ -71,6 +71,22 @@
       "fondo": "a",
       "fecha": "2021-11-03",
       "id": 9
+    },
+    {
+      "cedula": "1061730",
+      "nombre": "zami",
+      "eps": "porveni",
+      "fondo": "colfondos",
+      "fecha": "2021-11-05",
+      "id": 10
+    },
+    {
+      "cedula": "juan",
+      "nombre": "dd",
+      "eps": "44",
+      "fondo": "44",
+      "fecha": "2021-11-25",
+      "id": 11
     }
   ],
   "dotacion": [
@@ -128,6 +144,28 @@
       "oberol": "1",
       "fecha": "2021-11-10",
       "id": 5
+    },
+    {
+      "camisa": "a",
+      "pantalon": "a5a",
+      "gorra": "a5a5",
+      "zapatos": "a",
+      "corbata": "a",
+      "chaqueta": "a",
+      "oberol": "a",
+      "fecha": "2021-11-03",
+      "id": 6
+    },
+    {
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "1",
+      "zapatos": "1",
+      "corbata": "1",
+      "chaqueta": "1",
+      "oberol": "1",
+      "fecha": "2021-11-25",
+      "id": 7
     }
   ]
 }
