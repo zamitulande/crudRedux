@@ -25,6 +25,12 @@ export default function(state = initialState, action){
                 loading: false,
                 dotacion:[...state.dotacion, action.payload]
             }
+        case AGREGAR_DOTACION_ERROR:
+            return{
+                ...state,
+                loading: false,
+                error: action.payload
+            }
         default:
             return state;
     }

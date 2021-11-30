@@ -15,7 +15,7 @@ export function crearNuevoGuardaAction(guarda){
 
         try {
             dispatch(agregarGuardaExito(guarda));
-        } catch (erro) {
+        } catch (error) {
             dispatch(agregarGuardaError(true));
         }
     }
@@ -31,8 +31,9 @@ const agregarGuardaExito = guarda => ({
 })
 
 //si no se guarda bien, pasa un error
-const agregarGuardaError = ()=>({
-
+const agregarGuardaError = estado =>({
+    type: AGREGAR_GUARDA_ERROR,
+    payload: estado
 });
 
 //crear nueva dotacion
@@ -58,6 +59,8 @@ const agregarDotacionExito = dotacion => ({
 })
 
 //si no se guarda bien, pasa un error
-const agregarDotacionError = ()=>({
+const agregarDotacionError = estado =>({
+    type: AGREGAR_DOTACION_ERROR,
+    payload: estado
 
 })

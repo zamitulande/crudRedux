@@ -1,7 +1,8 @@
 import{
     AGREGAR_GUARDA,
     AGREGAR_GUARDA_EXITO,
-    AGREGAR_GUARDA_ERROR
+    AGREGAR_GUARDA_ERROR,
+   
 
 } from '../types';
 
@@ -24,6 +25,12 @@ export default function(state = initialState, action){
                 ...state,
                 loading: false,
                 guardas:[...state.guardas, action.payload]
+            }
+        case AGREGAR_GUARDA_ERROR:
+            return{
+                ...state,
+                loading: false,
+                error: action.payload
             }
         default:
             return state;
