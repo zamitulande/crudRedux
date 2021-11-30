@@ -7,15 +7,22 @@ import{
     AGREGAR_DOTACION_ERROR
 
 } from '../types';
+import clienteAxios from '../config/axios';
 
 //crear nuevos guardas
 export function crearNuevoGuardaAction(guarda){
-    return(dispatch)=>{
+    return async (dispatch)=>{
         dispatch(agregarGuarda());
 
         try {
+            //insertar datos en la API
+            await clienteAxios.post('/guardas', guarda)
+
+            //si todo sale  bien se actualiza el state
             dispatch(agregarGuardaExito(guarda));
-        } catch (error) {
+        } catch (err) {
+            console.log(err);
+            //si hay un error se cambia el state
             dispatch(agregarGuardaError(true));
         }
     }
@@ -38,12 +45,18 @@ const agregarGuardaError = estado =>({
 
 //crear nueva dotacion
 export function crearNuevoDotacionAction(dotacion){
-    return(dispatch)=>{
+    return async (dispatch)=>{
         dispatch(agregarDotacion());
 
         try {
+            //insertar datos en la API
+            await clienteAxios.post('/dotacion', dotacion)
+
+            //si todo sale  bien se actualiza el state
             dispatch(agregarDotacionExito(dotacion));
-        } catch (error) {
+        } catch (err) {
+            console.log(err);
+            //si hay un error se cambia el state    
             dispatch(agregarDotacionError(true));
         }
     }

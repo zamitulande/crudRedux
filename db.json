@@ -1,22 +1,71 @@
 {
-    "guardas":[
-        {
-            "cedula": "123456",
-            "nombre": "juan",
-            "eps": "sanitas",
-            "fondo": "porvenir",
-            "fecha": "15/02/2021"            
-        }
-     ],
-     "dotacion": [
-        {
-            "camisa": "1",
-            "pantalon": "1",
-            "gorra": "1",
-            "zapatos": "1",
-            "corbata": "1",
-            "chaqueta": "1",
-            "oberol": "1"
-        }
-    ]
+  "guardas": [
+    {
+      "id": 1,
+      "cedula": "2020",
+      "nombre": "juan",
+      "eps": "sanitas",
+      "fondo": "colfondos",
+      "fecha": "21/11/2021"
+    },
+    {
+      "id": 2,
+      "cedula": "5050",
+      "nombre": "juan pablo",
+      "eps": "sanitas",
+      "fondo": "fporvenir",
+      "fecha": "15/01/2021"
+    },
+    {
+      "cedula": "101",
+      "nombre": "zami",
+      "eps": "asmet",
+      "fondo": "colpensiones",
+      "fecha": "2021-11-04",
+      "id": 3
+    },
+    {
+      "cedula": "pedro",
+      "nombre": "zami",
+      "eps": "coomeva",
+      "fondo": "colfondos",
+      "fecha": "2021-11-03",
+      "id": 4
+    }
+  ],
+  "dotacion": [
+    {
+      "id": 1,
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "1",
+      "zapatos": "1",
+      "corbata": "1",
+      "chaqueta": "1",
+      "oberol": "1",
+      "fecha": "11/11/2021"
+    },
+    {
+      "id": 2,
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "0",
+      "zapatos": "1",
+      "corbata": "0",
+      "chaqueta": "1",
+      "oberol": "0",
+      "fecha": "23/11/2021"
+    },
+    {
+      "camisa": "5",
+      "pantalon": "6",
+      "gorra": "5",
+      "zapatos": "6",
+      "corbata": "5",
+      "chaqueta": "6",
+      "oberol": "5",
+      "fecha": "2021-11-06",
+      "id": 3
+    }
+  ]
 }
