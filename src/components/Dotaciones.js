@@ -1,8 +1,22 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+
+//redux
+import { useSelector, useDispatch } from 'react-redux';
+import { obtenerDotacionAction } from '../actions/guardaAction';
 
 
 const Guardas = () => {
+
+    const dispatch= useDispatch();
+
+    useEffect(() => {
+
+        //consultar a la api
+        const cargarDotacion=()=> dispatch(obtenerDotacionAction());
+        cargarDotacion();
+       
+    }, [])
     return (
       <Fragment>
           <Link to={"/dotacion"}

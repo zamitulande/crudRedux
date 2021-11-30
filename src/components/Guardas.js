@@ -1,8 +1,24 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
+
 import { Link } from 'react-router-dom';
+
+//redux
+import { useSelector, useDispatch } from 'react-redux';
+import { obtenerGuardasAction } from '../actions/guardaAction';
 
 
 const Guardas = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        
+        //consultar la api
+        const cargarGuardas=()=> dispatch(obtenerGuardasAction());
+        cargarGuardas();
+
+        
+    }, [])
     return (
       <Fragment>
           <Link to={"/guarda/nuevo"}

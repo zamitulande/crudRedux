@@ -1,7 +1,10 @@
 import{
     AGREGAR_DOTACION,
     AGREGAR_DOTACION_EXITO,
-    AGREGAR_DOTACION_ERROR
+    AGREGAR_DOTACION_ERROR,
+    COMENZAR_DESCARGA_DOTACION,
+    DESCARGAR_DOTACION_ERROR,
+    DESCARGA_GUARDA_EXITO
 
 } from '../types';
 
@@ -15,6 +18,7 @@ const initialState={
 export default function(state = initialState, action){
     switch(action.type){
         case AGREGAR_DOTACION:
+        case COMENZAR_DESCARGA_DOTACION:
             return{
                 ...state,
                 loading:action.payload
@@ -26,10 +30,18 @@ export default function(state = initialState, action){
                 dotacion:[...state.dotacion, action.payload]
             }
         case AGREGAR_DOTACION_ERROR:
+        case DESCARGAR_DOTACION_ERROR:  
             return{
                 ...state,
                 loading: false,
                 error: action.payload
+            }
+        case DESCARGA_GUARDA_EXITO:
+            return{
+                ...state,
+                loading: false,
+                error: null,
+                dotacion: action.payload
             }
 
         default:

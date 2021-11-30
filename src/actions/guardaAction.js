@@ -4,7 +4,13 @@ import{
     AGREGAR_GUARDA_ERROR, 
     AGREGAR_DOTACION,
     AGREGAR_DOTACION_EXITO,
-    AGREGAR_DOTACION_ERROR
+    AGREGAR_DOTACION_ERROR,
+    COMENZAR_DESCARGA_GUARDA,
+    DESCARGA_GUARDA_EXITO,
+    DESCARGA_GUARDA_ERROR,
+    COMENZAR_DESCARGA_DOTACION,
+    DESCARGAR_DOTACION_EXITO,
+    DESCARGAR_DOTACION_ERROR
 
 } from '../types';
 import clienteAxios from '../config/axios';
@@ -57,6 +63,8 @@ const agregarGuardaError = estado =>({
     payload: estado
 });
 
+//---------------------------------------------------------------------------------------------------------------
+
 //crear nueva dotacion
 export function crearNuevoDotacionAction(dotacion){
     return async (dispatch)=>{
@@ -105,3 +113,70 @@ const agregarDotacionError = estado =>({
     payload: estado
 
 });
+
+
+
+//-------------------------------------------------------------------------------------
+
+
+//funcion que descarga los guardas de la base de datos
+export function obtenerGuardasAction(){
+    return async (dispatch)=>{
+        dispatch(descargaGuardas());
+
+        //hacer la consulta a la api
+        try {
+            const respuesta = await clienteAxios.get('/guardas');
+            dispatch(descargaGuardasExitosa(respuesta.data));
+        } catch (error) {
+            console.log(error);
+            dispatch(descargaGuardasError());
+        }
+    }
+}
+const descargaGuardas=()=>({
+    type: COMENZAR_DESCARGA_GUARDA,
+    payload: true
+})
+
+const descargaGuardasExitosa = guardas=>({
+    type: DESCARGA_GUARDA_EXITO,
+    payload: guardas
+})
+const  descargaGuardasError = () =>({
+    type: DESCARGA_GUARDA_ERROR,
+    payload: true
+})
+
+
+
+
+//--------------------------------------------------------------------------------------------------------
+
+//fincion que descarga las dotaciones de la base de datos
+export function obtenerDotacionAction(){
+    return async (dispatch)=>{
+        dispatch(descargarDotacion());
+
+        //hacer la consulta a al api
+        try {
+            const respuesta = await clienteAxios.get('/dotacion');
+            dispatch(descargaDotacionExitosa(respuesta.data));
+        } catch (error) {
+            console.log(error);
+            dispatch(descargaDotacionError());
+        }
+    }
+}
+const descargarDotacion=()=>({
+    type:COMENZAR_DESCARGA_DOTACION,
+    payload: true
+})
+const descargaDotacionExitosa = dotacion =>({
+        type: DESCARGAR_DOTACION_EXITO, 
+        payload: dotacion
+})
+const descargaDotacionError = ()=>({
+    type: DESCARGAR_DOTACION_ERROR,
+    payload: true
+})
