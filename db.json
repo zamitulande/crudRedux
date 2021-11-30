@@ -31,6 +31,46 @@
       "fondo": "colfondos",
       "fecha": "2021-11-03",
       "id": 4
+    },
+    {
+      "cedula": "a",
+      "nombre": "aa",
+      "eps": "a",
+      "fondo": "a",
+      "fecha": "2021-11-12",
+      "id": 5
+    },
+    {
+      "cedula": "a",
+      "nombre": "a",
+      "eps": "a",
+      "fondo": "a",
+      "fecha": "2021-11-06",
+      "id": 6
+    },
+    {
+      "cedula": "a",
+      "nombre": "a",
+      "eps": "a",
+      "fondo": "a",
+      "fecha": "2021-11-06",
+      "id": 7
+    },
+    {
+      "cedula": "a",
+      "nombre": "2",
+      "eps": "2",
+      "fondo": "2",
+      "fecha": "2021-11-05",
+      "id": 8
+    },
+    {
+      "cedula": "a",
+      "nombre": "a",
+      "eps": "a",
+      "fondo": "a",
+      "fecha": "2021-11-03",
+      "id": 9
     }
   ],
   "dotacion": [
@@ -66,6 +106,28 @@
       "oberol": "5",
       "fecha": "2021-11-06",
       "id": 3
+    },
+    {
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "1",
+      "zapatos": "1",
+      "corbata": "1",
+      "chaqueta": "1",
+      "oberol": "1",
+      "fecha": "2021-11-10",
+      "id": 4
+    },
+    {
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "1",
+      "zapatos": "1",
+      "corbata": "1",
+      "chaqueta": "1",
+      "oberol": "1",
+      "fecha": "2021-11-10",
+      "id": 5
     }
   ]
 }

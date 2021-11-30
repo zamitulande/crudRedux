@@ -19,6 +19,10 @@ const NuevoGuarda = () => {
     //utlizar use dispatch y te crea una funcion
     const dispatch = useDispatch();
 
+    //acceder al state del store
+    const cargando = useSelector(state=> state.guardas.loading);
+    const error = useSelector(state=>state.guardas.error);
+
     //mandar a llamar el action de productoAction
     const agregarGuarda=(guarda)=> dispatch(crearNuevoGuardaAction(guarda));
 
@@ -120,7 +124,8 @@ const NuevoGuarda = () => {
                                 </button>
                                                            
                         </form>                                                
-                        
+                        {cargando ? <p>Cargando..</p> : null}
+                        {error ? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null}
                     </div>
                     
                 </div>

@@ -22,6 +22,9 @@ const NuevaDotacion = () => {
     //utlizar use dispatch y te crea una funcion
     const dispatch = useDispatch();
 
+    const cargando = useSelector(state=> state.dotacion.loading);
+    const error = useSelector(state=>state.dotacion.error);
+
     //mandar a llamar el action de productoAction
     const agregarDotacion=(dotacion)=> dispatch(crearNuevoDotacionAction(dotacion));
 
@@ -145,6 +148,8 @@ const NuevaDotacion = () => {
                           </button>
                         
                     </form>
+                    {cargando ? <p>Cargando..</p> : null}
+                    {error ? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null}
                 </div>
                         
             </div>
