@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const EditarDotacion = () => {
     return (
@@ -80,6 +81,13 @@ const EditarDotacion = () => {
                           </button>
                         
                     </form>
+                    <nav>
+                        <div >
+                            <h1><Link to={'/dotaciones'} >Volver</Link></h1>
+                        </div>
+
+            
+                  </nav>
                 </div>
                         
             </div>

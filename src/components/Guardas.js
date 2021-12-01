@@ -24,7 +24,8 @@ const Guardas = () => {
 
     //obtener el state que se obtubo con el codigo de los reducers y el action
     const guardas = useSelector(state => state.guardas.guardas);
-    
+    const error = useSelector(state => state.guardas.error);
+    const cargando = useSelector(state =>state.guardas.loading);
 
 
     return (
@@ -32,6 +33,9 @@ const Guardas = () => {
           <Link to={"/guarda/nuevo"}
                 className="btn btn-danger nuevo-post d-blok d-md-inline-block">Nuevo Guarda &#43;</Link>
           <h2 className="text-center my-5">Listado de Guardas</h2>
+
+          {error ? <p className="font-weight alert-danger text-center">Hubo un Error</p> : null }
+          {cargando ? <p className="text-center">Cargando...</p> : null }
 
           <table className="table table-striped">
                 <thead className="bg-primary table-dark">

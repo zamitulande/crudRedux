@@ -65,6 +65,13 @@ const EditarGuarda = () => {
                           </button>
                     </form>
                 </div>
+                <nav>
+            <div >
+                <h1><Link to={'/guarda'} >Volver</Link></h1>
+            </div>
+
+            
+        </nav>
                          
             </div>
         </div>

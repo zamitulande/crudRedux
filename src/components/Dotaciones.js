@@ -21,12 +21,15 @@ const Guardas = () => {
 
     //obtener el state que se obtubo con el codigo de los reducers y el action
     const dotaciones = useSelector(state => state.dotacion.dotacion);
-    
+    const error = useSelector(state => state.dotacion.error);
+    const cargando = useSelector(state =>state.dotacion.loading);
     return (
       <Fragment>
           <Link to={"/dotacion"}
                 className="btn btn-danger nuevo-post d-blok d-md-inline-block">Nueva dotacion</Link>
           <h2 className="text-center my-5">Dotaciones Entregadas</h2>
+          {error ? <p className="font-weight alert-danger text-center">Hubo un Error</p> : null }
+          {cargando ? <p className="text-center">Cargando...</p> : null }
 
           <table className="table table-striped">
                 <thead className="bg-primary table-dark">
