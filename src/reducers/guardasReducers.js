@@ -7,7 +7,8 @@ import{
     DESCARGA_GUARDA_ERROR,
     OBTENER_GUARDA_ELIMINAR,
     GUARDA_ELIMINADO_EXITO,
-    GUARDA_ELIMINADO_ERROR
+    GUARDA_ELIMINADO_ERROR,
+    DOTACION_ELIMINADO_EXITO
    
 
 } from '../types';
@@ -36,6 +37,7 @@ export default function(state = initialState, action){
             }
         case AGREGAR_GUARDA_ERROR:
         case DESCARGA_GUARDA_ERROR:
+        case GUARDA_ELIMINADO_ERROR:
             return{
                 ...state,
                 loading: false,
@@ -52,6 +54,12 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 guardaeliminar: action.payload
+            }
+        case GUARDA_ELIMINADO_EXITO:
+            return{
+                ...state,
+                guardas: state.guardas.filter(guardas=> guardas.id !== state.guardaeliminar), //esta lina saca el id eliminado y deja los que no se eliminaron
+                guardaeliminar: null //este null regresa al state original
             }
         
         default:

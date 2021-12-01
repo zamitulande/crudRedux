@@ -1,46 +1,29 @@
 {
-  "guardas": [
-    {
-      "id": 1,
-      "cedula": "2020",
-      "nombre": "juan",
-      "eps": "sanitas",
-      "fondo": "colfondos",
-      "fecha": "21/11/2021"
-    },
-    {
-      "cedula": "1061730128",
-      "nombre": "zami tulande",
-      "eps": "sanias",
-      "fondo": "porvenir",
-      "fecha": "2021-11-11",
-      "id": 2
-    }
-  ],
+  "guardas": [],
   "dotacion": [
     {
-      "nombre": "zami",
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
+      "nombre": "ROCIO",
+      "camisa": "2",
+      "pantalon": "2",
+      "gorra": "0",
       "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-11-26",
-      "id": 8
+      "corbata": "0",
+      "chaqueta": "0",
+      "oberol": "0",
+      "fecha": "2021-12-22",
+      "id": 1
     },
     {
-      "nombre": "zami tulande",
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
+      "nombre": "TOPA",
+      "camisa": "2",
+      "pantalon": "2",
+      "gorra": "0",
       "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-11-10",
-      "id": 9
+      "corbata": "0",
+      "chaqueta": "0",
+      "oberol": "0",
+      "fecha": "2022-01-08",
+      "id": 2
     }
   ]
 }

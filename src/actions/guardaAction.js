@@ -204,14 +204,27 @@ const descargaDotacionError = ()=>({
 export function borrarGuardaAction(id){
     return async (dispatch)=>{
         dispatch(obtenerGuardaEliminar(id));
-        console.log(id);
+        
+        try {
+            await clienteAxios.delete(`/guardas/${id}`);
+            dispatch(eliminarGuardaExito());
+        } catch (error) {
+                console.log(error);
+                dispatch(eliminarGuardaError());
+        }
     }
 }
 const obtenerGuardaEliminar = id => ({
     type: OBTENER_GUARDA_ELIMINAR,
     payload: id
 })
-
+const eliminarGuardaExito =id => ({
+    type: GUARDA_ELIMINADO_EXITO
+})
+const eliminarGuardaError = ()=> ({
+    type: GUARDA_ELIMINADO_ERROR,
+    payload: true
+})
 
 
 
@@ -222,13 +235,30 @@ const obtenerGuardaEliminar = id => ({
 
             //ELIMINAR DOTACION DE LA API
 
+
+//selecciona y elimina una dotacion
 export function borrarDotacionAction(id){
     return async (dispatch)=>{
         dispatch(obtenerDotacionEliminar(id));
-        console.log(id);
+        
+        try {
+            await clienteAxios.delete(`/dotacion/${id}`);
+            dispatch(eliminarDotacionExito());
+        } catch (error) {
+            console.log(error);
+            dispatch(eliminarDotacionError());
+        }
     }
 }
 const obtenerDotacionEliminar = id => ({
     type: OBTENER_DOTACION_ELIMINAR,
     payload: id
+});
+const eliminarDotacionExito = id => ({
+    type: DOTACION_ELIMINADO_EXITO
+     
+});
+const eliminarDotacionError = id => ({
+    type : DOTACION_ELIMINADO_ERROR,
+    payload: true
 })

@@ -5,7 +5,9 @@ import{
     COMENZAR_DESCARGA_DOTACION,
     DESCARGAR_DOTACION_ERROR,
     DESCARGAR_DOTACION_EXITO,
-    OBTENER_DOTACION_ELIMINAR
+    OBTENER_DOTACION_ELIMINAR,
+    DOTACION_ELIMINADO_EXITO,
+    DOTACION_ELIMINADO_ERROR
 
 } from '../types';
 
@@ -32,7 +34,8 @@ export default function(state = initialState, action){
                 dotacion:[...state.dotacion, action.payload]
             }
         case AGREGAR_DOTACION_ERROR:
-        case DESCARGAR_DOTACION_ERROR:  
+        case DESCARGAR_DOTACION_ERROR: 
+        case DOTACION_ELIMINADO_ERROR: 
             return{
                 ...state,
                 loading: false,
@@ -49,6 +52,12 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 dotacioneliminar: action.payload
+            }
+        case DOTACION_ELIMINADO_EXITO:
+            return{
+                ...state,
+                dotacion: state.dotacion.filter(dotacion=> dotacion.id !== state.dotacioneliminar), //esta lina saca el id eliminado y deja los que no se eliminaron
+                dotacioneliminar: null //este null regresa al state original
             }
 
         default:
