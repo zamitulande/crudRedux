@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 //redux
 import { useDispatch } from 'react-redux';
@@ -15,11 +16,24 @@ const Dotacion = ({dotacion}) => {
     //confirmar si desea eliminar
     const confirmarEliminarDotacion = id => {
 
-        //preguntar al usuario
+        Swal.fire({
+            title: 'Estas seguro?',
+            text: "Una dotacion que se elimina no se puede recuperar!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!',
+            calcelButtonText:'Cancelar'
+          }).then((result) => {
+            if (result.value) {
 
+                //pasar al action
+             dispatch(borrarDotacionAction(id));
 
-        //pasar al action
-        dispatch(borrarDotacionAction(id));
+             
+            }
+          });
     }
     return ( 
         <tr>

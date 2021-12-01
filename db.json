@@ -1,29 +1,4 @@
 {
   "guardas": [],
-  "dotacion": [
-    {
-      "nombre": "ROCIO",
-      "camisa": "2",
-      "pantalon": "2",
-      "gorra": "0",
-      "zapatos": "1",
-      "corbata": "0",
-      "chaqueta": "0",
-      "oberol": "0",
-      "fecha": "2021-12-22",
-      "id": 1
-    },
-    {
-      "nombre": "TOPA",
-      "camisa": "2",
-      "pantalon": "2",
-      "gorra": "0",
-      "zapatos": "1",
-      "corbata": "0",
-      "chaqueta": "0",
-      "oberol": "0",
-      "fecha": "2022-01-08",
-      "id": 2
-    }
-  ]
+  "dotacion": []
 }

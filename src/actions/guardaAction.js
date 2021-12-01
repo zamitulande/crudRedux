@@ -208,6 +208,13 @@ export function borrarGuardaAction(id){
         try {
             await clienteAxios.delete(`/guardas/${id}`);
             dispatch(eliminarGuardaExito());
+
+            //si se elimina, mostrar la alerta
+            Swal.fire(
+                'Eliminado',
+                'El guarda se elimino correctamente.',
+                'success'
+              )
         } catch (error) {
                 console.log(error);
                 dispatch(eliminarGuardaError());
@@ -244,6 +251,12 @@ export function borrarDotacionAction(id){
         try {
             await clienteAxios.delete(`/dotacion/${id}`);
             dispatch(eliminarDotacionExito());
+             //si se elimina, mostrar la alerta
+             Swal.fire(
+                'Eliminado',
+                'La dotacion se elimino correctamente.',
+                'success'
+              )
         } catch (error) {
             console.log(error);
             dispatch(eliminarDotacionError());
