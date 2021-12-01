@@ -1,15 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 //redux
 import { useDispatch } from 'react-redux';
-import { borrarGuardaAction } from '../actions/guardaAction';
+import { borrarGuardaAction, obtenerGuardaEditar } from '../actions/guardaAction';
 
 const Guarda = ({guarda}) => {
 
     const {cedula, nombre, eps, fondo, fecha, id} = guarda;
+
     const dispatch = useDispatch();
+    //habilitar history para redireccion
+    const history= useHistory();
 
     //confirmar si dese aliminar el id sellecionado
     const confirmarEliminarGuarda=id => {
@@ -36,6 +39,12 @@ const Guarda = ({guarda}) => {
 
             
     }
+
+    //funcio que redirige de forma programada
+    const redireccionarEdicion = () =>{
+            dispatch(obtenerGuardaEditar(guarda));
+            history.push(`guarda/editar/${id}`)
+    }
     return (
         <tr>
             <td>{cedula}</td>
@@ -44,7 +53,11 @@ const Guarda = ({guarda}) => {
             <td>{fondo}</td>
             <td>{fecha}</td>
             <td className="acciones">
-                <Link to={`guarda/editar/${id}`} className="btn btn-primary mr-2">Editar</Link>
+                <button 
+                    className="btn btn-primary mr-2"
+                    type="button"
+                    onClick={()=>redireccionarEdicion(guarda)}
+                    >Editar</button>
                 <button
                     type="button"
                     className="btn btn-danger"

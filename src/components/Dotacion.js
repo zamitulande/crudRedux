@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 //redux
 import { useDispatch } from 'react-redux';
-import { borrarDotacionAction } from '../actions/guardaAction';
+import { borrarDotacionAction, obtenerDotacionEditar } from '../actions/guardaAction';
 
 
 const Dotacion = ({dotacion}) => {
@@ -12,6 +12,8 @@ const Dotacion = ({dotacion}) => {
     const {nombre, camisa, pantalon, gorra, corbata, chaqueta, fecha, id} = dotacion;
 
     const dispatch = useDispatch();
+    //habilitar history para redireccion
+    const history= useHistory();
 
     //confirmar si desea eliminar
     const confirmarEliminarDotacion = id => {
@@ -35,6 +37,12 @@ const Dotacion = ({dotacion}) => {
             }
           });
     }
+
+    //funcion que redireige de forma programda
+    const redireccionarEdicion = () =>{
+        dispatch(obtenerDotacionEditar(dotacion));
+        history.push(`dotacion/editar/${id}`)
+    }
     return ( 
         <tr>
             <td>{nombre}</td>
@@ -45,7 +53,11 @@ const Dotacion = ({dotacion}) => {
             <td>{chaqueta}</td>
             <td>{fecha}</td>
             <td className="acciones">
-                <Link to={`dotacion/editar/${id}`} className="btn btn-primary mr-2">Editar</Link>
+                <button
+                    type="button"
+                    onClick={()=>redireccionarEdicion(dotacion)}
+                    className="btn btn-primary mr-2">
+                     Editar</button>
                 <button
                     type="button"
                     className="btn btn-danger"

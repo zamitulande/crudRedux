@@ -8,7 +8,7 @@ import{
     OBTENER_GUARDA_ELIMINAR,
     GUARDA_ELIMINADO_EXITO,
     GUARDA_ELIMINADO_ERROR,
-    DOTACION_ELIMINADO_EXITO
+    OBTENER_GUARDA_EDITAR
    
 
 } from '../types';
@@ -19,7 +19,8 @@ const initialState={
     guardas:[],
     error: null,
     loading: false,
-    guardaeliminar: null
+    guardaeliminar: null,
+    guardaEditar:null
 }
 export default function(state = initialState, action){
     switch(action.type){
@@ -60,6 +61,12 @@ export default function(state = initialState, action){
                 ...state,
                 guardas: state.guardas.filter(guardas=> guardas.id !== state.guardaeliminar), //esta lina saca el id eliminado y deja los que no se eliminaron
                 guardaeliminar: null //este null regresa al state original
+            }
+        case OBTENER_GUARDA_EDITAR:
+            return{
+                ...state,
+                guardaEditar: action.payload
+
             }
         
         default:

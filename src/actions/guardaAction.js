@@ -16,11 +16,14 @@ import{
     GUARDA_ELIMINADO_ERROR,
     OBTENER_DOTACION_ELIMINAR,
     DOTACION_ELIMINADO_EXITO,
-    DOTACION_ELIMINADO_ERROR
+    DOTACION_ELIMINADO_ERROR,
+    OBTENER_GUARDA_EDITAR,
+    OBTENER_DOTACION_EDITAR
 
 } from '../types';
 import clienteAxios from '../config/axios';
 import Swal from 'sweetalert2';
+import dotacionReducers from '../reducers/dotacionReducers';
 
 
 //------------------------------------------------------------------------------------------------------------------
@@ -274,4 +277,39 @@ const eliminarDotacionExito = id => ({
 const eliminarDotacionError = id => ({
     type : DOTACION_ELIMINADO_ERROR,
     payload: true
+});
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+        //EDITAR GUARDA DE LA API
+
+//colocar guarda en el action
+export function obtenerGuardaEditar(guarda){
+    return(dispatch)=>{
+        dispatch(obtenerGuardaActionEditar(guarda))
+    }
+}
+
+const obtenerGuardaActionEditar  = guarda => ({
+        type: OBTENER_GUARDA_EDITAR,
+        payload: guarda
+})
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+     //EDITAR DOTACION DE LA API
+
+//colocar dotacion en el action 
+export function obtenerDotacionEditar (dotacion){
+    return(dispatch)=>{
+        dispatch(obtenerDotacionActionEditar(dotacion))
+    }
+}
+const obtenerDotacionActionEditar = dotacion => ({
+    type: OBTENER_DOTACION_EDITAR,
+    payload: dotacion
 })
