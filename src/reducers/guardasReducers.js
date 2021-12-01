@@ -5,6 +5,9 @@ import{
     COMENZAR_DESCARGA_GUARDA,
     DESCARGA_GUARDA_EXITO,
     DESCARGA_GUARDA_ERROR,
+    OBTENER_GUARDA_ELIMINAR,
+    GUARDA_ELIMINADO_EXITO,
+    GUARDA_ELIMINADO_ERROR
    
 
 } from '../types';
@@ -14,7 +17,8 @@ import{
 const initialState={
     guardas:[],
     error: null,
-    loading: false
+    loading: false,
+    guardaeliminar: null
 }
 export default function(state = initialState, action){
     switch(action.type){
@@ -43,6 +47,11 @@ export default function(state = initialState, action){
                 loading: false,
                 error: null,
                 guardas: action.payload
+            }
+        case OBTENER_GUARDA_ELIMINAR:
+            return{
+                ...state,
+                guardaeliminar: action.payload
             }
         
         default:

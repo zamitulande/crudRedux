@@ -10,7 +10,13 @@ import{
     DESCARGA_GUARDA_ERROR,
     COMENZAR_DESCARGA_DOTACION,
     DESCARGAR_DOTACION_EXITO,
-    DESCARGAR_DOTACION_ERROR
+    DESCARGAR_DOTACION_ERROR,
+    OBTENER_GUARDA_ELIMINAR,
+    GUARDA_ELIMINADO_EXITO,
+    GUARDA_ELIMINADO_ERROR,
+    OBTENER_DOTACION_ELIMINAR,
+    DOTACION_ELIMINADO_EXITO,
+    DOTACION_ELIMINADO_ERROR
 
 } from '../types';
 import clienteAxios from '../config/axios';
@@ -18,7 +24,7 @@ import Swal from 'sweetalert2';
 
 
 //------------------------------------------------------------------------------------------------------------------
-                //GUARDAS
+                // CREAR GUARDAS
 
 
 //crear nuevos guardas
@@ -70,7 +76,7 @@ const agregarGuardaError = estado =>({
 
 //---------------------------------------------------------------------------------------------------------------
 
-            //DOTACION
+            //CREAR DOTACION
 
 //crear nueva dotacion
 export function crearNuevoDotacionAction(dotacion){
@@ -125,7 +131,7 @@ const agregarDotacionError = estado =>({
 
 //-------------------------------------------------------------------------------------
 
-            //GUARDAS
+            //OBNTER GUARDAS EN LA API
 
 //funcion que descarga los guardas de la base de datos
 export function obtenerGuardasAction(){
@@ -161,7 +167,7 @@ const  descargaGuardasError = () =>({
 
 //--------------------------------------------------------------------------------------------------------
 
-            //DOTACION
+            //OBTNER DOTACION EN LA API
 
 //fincion que descarga las dotaciones de la base de datos
 export function obtenerDotacionAction(){
@@ -189,4 +195,40 @@ const descargaDotacionExitosa = dotacion =>({
 const descargaDotacionError = ()=>({
     type: DESCARGAR_DOTACION_ERROR,
     payload: true
+})
+
+//----------------------------------------------------------------------------------------------------------------
+
+            //ELIMINAR GUARDAS DE LA API
+
+export function borrarGuardaAction(id){
+    return async (dispatch)=>{
+        dispatch(obtenerGuardaEliminar(id));
+        console.log(id);
+    }
+}
+const obtenerGuardaEliminar = id => ({
+    type: OBTENER_GUARDA_ELIMINAR,
+    payload: id
+})
+
+
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+            //ELIMINAR DOTACION DE LA API
+
+export function borrarDotacionAction(id){
+    return async (dispatch)=>{
+        dispatch(obtenerDotacionEliminar(id));
+        console.log(id);
+    }
+}
+const obtenerDotacionEliminar = id => ({
+    type: OBTENER_DOTACION_ELIMINAR,
+    payload: id
 })

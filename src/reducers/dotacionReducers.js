@@ -4,7 +4,8 @@ import{
     AGREGAR_DOTACION_ERROR,
     COMENZAR_DESCARGA_DOTACION,
     DESCARGAR_DOTACION_ERROR,
-    DESCARGAR_DOTACION_EXITO
+    DESCARGAR_DOTACION_EXITO,
+    OBTENER_DOTACION_ELIMINAR
 
 } from '../types';
 
@@ -13,7 +14,8 @@ import{
 const initialState={
     dotacion:[],
     error: null,
-    loading: false
+    loading: false,
+    dotacioneliminar:null
 }
 export default function(state = initialState, action){
     switch(action.type){
@@ -42,6 +44,11 @@ export default function(state = initialState, action){
                 loading: false,
                 error: null,
                 dotacion: action.payload
+            }
+        case OBTENER_DOTACION_ELIMINAR:
+            return{
+                ...state,
+                dotacioneliminar: action.payload
             }
 
         default:

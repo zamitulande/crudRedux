@@ -35,7 +35,7 @@ const Guardas = () => {
           <h2 className="text-center my-5">Listado de Guardas</h2>
 
           {error ? <p className="font-weight alert-danger text-center">Hubo un Error</p> : null }
-          {cargando ? <p className="text-center">Cargando...</p> : null }
+          {cargando ? <p className="text-center">Cargando...</p> : null }   
 
           <table className="table table-striped">
                 <thead className="bg-primary table-dark">
