@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {useDispatch, useSelector} from  'react-redux';
 
 const EditarGuarda = () => {
+
+    //guarda a editar
+    const guarda=useSelector(state => state.guardas.guardaEditar);
+
+     //aplicar desttructuring
+     const {cedula, nombre, eps, fondo, fecha}= guarda;
+    
     return ( 
         <div className="row justify-content-center">
         <div className="col-md-8">
@@ -15,10 +22,11 @@ const EditarGuarda = () => {
                     <div className="form-group">
                             <label>Cedula</label>
                             <input
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 placeholder="Cedula del Guarda"
                                 nombre="cedula"
+                                value={cedula}
                             />
                         </div>
                         <div className="form-group">
@@ -28,6 +36,7 @@ const EditarGuarda = () => {
                                 className="form-control"
                                 placeholder="Nombre del  Guarda"
                                 nombre="nombre"
+                                value={nombre}
                             />
                         </div>
                         <div className="form-group">
@@ -37,6 +46,7 @@ const EditarGuarda = () => {
                                 className="form-control"
                                 placeholder="EPS del Guarda"
                                 nombre="eps"
+                                value={eps}
                             />
                         </div>
                         <div className="form-group">
@@ -46,6 +56,7 @@ const EditarGuarda = () => {
                                 className="form-control"
                                 placeholder="Fondo Pensio del Guarda"
                                 nombre="fondo"
+                                value={fondo}
                             />
                         </div>
                         <div className="form-group">
@@ -54,7 +65,8 @@ const EditarGuarda = () => {
                                 type="date"
                                 className="form-control"
                                 placeholder="Fondo Pension del Guarda"
-                                nombre="fondo"
+                                nombre="fecha"
+                                value={fecha}
                             />
                         </div>
                     

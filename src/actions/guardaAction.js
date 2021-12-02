@@ -284,7 +284,7 @@ const eliminarDotacionError = id => ({
 
         //EDITAR GUARDA DE LA API
 
-//colocar guarda en el action
+//colocar guarda en edicion
 export function obtenerGuardaEditar(guarda){
     return(dispatch)=>{
         dispatch(obtenerGuardaActionEditar(guarda))
@@ -303,7 +303,7 @@ const obtenerGuardaActionEditar  = guarda => ({
 
      //EDITAR DOTACION DE LA API
 
-//colocar dotacion en el action 
+//colocar dotacion en edicion
 export function obtenerDotacionEditar (dotacion){
     return(dispatch)=>{
         dispatch(obtenerDotacionActionEditar(dotacion))

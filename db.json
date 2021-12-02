@@ -27,11 +27,11 @@
       "corbata": "1",
       "chaqueta": "1",
       "oberol": "1",
-      "fecha": "2021-12-21",
-      "id": 1
+      "fecha": "2021-12-23",
+      "id": 2
     },
     {
-      "nombre": "1",
+      "nombre": "rocio",
       "camisa": "1",
       "pantalon": "1",
       "gorra": "1",
@@ -40,7 +40,7 @@
       "chaqueta": "1",
       "oberol": "1",
       "fecha": "2021-12-23",
-      "id": 2
+      "id": 3
     }
   ]
 }
