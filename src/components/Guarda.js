@@ -52,15 +52,13 @@ const Guarda = ({guarda}) => {
             <td>{eps}</td>
             <td>{fondo}</td>
             <td>{fecha}</td>
-            <td className="acciones">
-                <button 
-                    className="btn btn-primary mr-2"
+            <td>
+                <button                     
                     type="button"
                     onClick={()=>redireccionarEdicion(guarda)}
                     >Editar</button>
                 <button
-                    type="button"
-                    className="btn btn-danger"
+                    type="button"                    
                     onClick={()=>confirmarEliminarGuarda(id)}
                     >Eliminar</button>
             </td>

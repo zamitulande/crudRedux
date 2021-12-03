@@ -37,8 +37,8 @@ const NuevoGuarda = ({history}) => {
         if(cedula.trim() === '' || nombre.trim() === '' || eps.trim() === '' || fondo.trim() ===''){
 
             const respuesta = {
-                msg: 'Todos los campor son obligatorios',
-                classes:'alert alert-danger text-center'
+                msg: 'Todos los campor son obligatorios'
+                
             }
 
             dispatch (mostrarAlerta(respuesta));
@@ -63,12 +63,12 @@ const NuevoGuarda = ({history}) => {
 
     return ( 
         
-        <div className="row justify-content-center">
+        <div>
             
-            <div className="col-md-8">
-                <div className="card">
-                    <div className="card-body">
-                        <h2 className="text-center mb-4 font-weight-bold">
+            <div>
+                <div>
+                    <div>
+                        <h2>
                             Agregar Nuevo Guarda
                         </h2>
 
@@ -77,55 +77,50 @@ const NuevoGuarda = ({history}) => {
                         <form
                             onSubmit={submitNuevoGuarda}
                         >
-                        <div className="form-group">
+                        <div>
                                 <label>Cedula</label>
                                 <input
-                                    type="text"
-                                    className="form-control"
+                                    type="text"                                    
                                     placeholder="Cedula del Guarda"
                                     name="cedula"
                                     value={cedula}
                                     onChange={e=>setCedula(e.target.value)}
                                 />
                             </div>
-                            <div className="form-group">
+                            <div>
                                 <label>Nombre </label>
                                 <input
-                                    type="text"
-                                    className="form-control"
+                                    type="text"                                   
                                     placeholder="Nombre del  Guarda"
                                     name="nombre"
                                     value={nombre}
                                     onChange={e=>setNombre(e.target.value)}
                                 />
                             </div>
-                            <div className="form-group">
+                            <div>
                                 <label>EPS</label>
                                 <input
-                                    type="text"
-                                    className="form-control"
+                                    type="text"                                    
                                     placeholder="EPS del Guarda"
                                     name="eps"
                                     value={eps}
                                     onChange={e=>setEps(e.target.value)}
                                 />
                             </div>
-                            <div className="form-group">
+                            <div>
                                 <label>Fondo Pension</label>
                                 <input
-                                    type="text"
-                                    className="form-control"
+                                    type="text"                                   
                                     placeholder="Fondo Pensio del Guarda"
                                     name="fondo"
                                     value={fondo}
                                     onChange={e=>setFondo(e.target.value)}
                                 />
                             </div>
-                            <div className="form-group">
+                            <div>
                                 <label>Fecha de Ingreso</label>
                                 <input
-                                    type="date"
-                                    className="form-control"
+                                    type="date"                                   
                                     placeholder="Fondo Pension del Guarda"
                                     name="fecha"
                                     value={fecha}
@@ -134,14 +129,13 @@ const NuevoGuarda = ({history}) => {
                             </div>
                         
                             <button
-                                type="submit"
-                                className="btn btn-primary font-weightbold text-uppercase d-block w-100">
+                                type="submit"                              >
                                     Agregar
                                 </button>
                                                            
                         </form>                                                
                         {cargando ? <p>Cargando..</p> : null}
-                        {error ? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null}
+                        {error ? <p>Hubo un error</p> : null}
                         <nav>
                         <div >
                             <h1><Link to={'/dotaciones'} >Cancelar</Link></h1>

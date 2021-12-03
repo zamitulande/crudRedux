@@ -37,6 +37,78 @@
       "oberol": "1",
       "fecha": "2021-12-25",
       "id": 2
+    },
+    {
+      "nombre": "",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2021-12-25",
+      "id": 3
+    },
+    {
+      "nombre": "jairo",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2022-01-01",
+      "id": 4
+    },
+    {
+      "nombre": "aa",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2021-12-29",
+      "id": 5
+    },
+    {
+      "nombre": "maior",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2021-12-23",
+      "id": 6
+    },
+    {
+      "nombre": "aaa",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2021-12-23",
+      "id": 7
+    },
+    {
+      "nombre": "a",
+      "camisa": "",
+      "pantalon": "",
+      "gorra": "",
+      "zapatos": "",
+      "corbata": "",
+      "chaqueta": "",
+      "oberol": "",
+      "fecha": "2021-12-31",
+      "id": 8
     }
   ]
 }

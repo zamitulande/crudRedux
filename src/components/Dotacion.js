@@ -52,15 +52,15 @@ const Dotacion = ({dotacion}) => {
             <td>{corbata}</td>
             <td>{chaqueta}</td>
             <td>{fecha}</td>
-            <td className="acciones">
+            <td >
                 <button
                     type="button"
                     onClick={()=>redireccionarEdicion(dotacion)}
-                    className="btn btn-primary mr-2">
+                   >
                      Editar</button>
                 <button
                     type="button"
-                    className="btn btn-danger"
+                    
                     onClick={()=> confirmarEliminarDotacion(id)}
                     >Eliminar</button>
             </td>

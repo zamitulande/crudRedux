@@ -47,65 +47,60 @@ const EditarGuarda = () => {
      }
     
     return ( 
-        <div className="row justify-content-center">
-        <div className="col-md-8">
-            <div className="card">
-                <div className="card-body">
-                    <h2 className="text-center mb-4 font-weight-bold">
+        <div>
+        <div>
+            <div>
+                <div>
+                    <h2>
                         Editar Informacion del Guarda
                     </h2>
                     <form
                         onSubmit={submitEditarGuarda}
                     >
-                    <div className="form-group">
+                    <div>
                             <label>Cedula</label>
                             <input
-                                type="text"
-                                className="form-control"
+                                type="text"                               
                                 placeholder="Cedula del Guarda"
                                 name="cedula"
                                 value={cedula}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Nombre </label>
                             <input
-                                type="text"
-                                className="form-control"
+                                type="text"                                
                                 placeholder="Nombre del  Guarda"
                                 name="nombre"
                                 value={nombre}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>EPS</label>
                             <input
-                                type="text"
-                                className="form-control"
+                                type="text"                                
                                 placeholder="EPS del Guarda"
                                 name="eps"
                                 value={eps}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Fondo Pension</label>
                             <input
-                                type="text"
-                                className="form-control"
+                                type="text"                              
                                 placeholder="Fondo Pensio del Guarda"
                                 name="fondo"
                                 value={fondo}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Fecha de Ingreso</label>
                             <input
-                                type="date"
-                                className="form-control"
+                                type="date"                                
                                 placeholder="Fondo Pension del Guarda"
                                 name="fecha"
                                 value={fecha}
@@ -115,7 +110,7 @@ const EditarGuarda = () => {
                     
                         <button
                             type="submit"
-                            className="btn btn-primary font-weightbold text-uppercase d-block w-100">
+                            >
                                 Guardar Cambios
                           </button>
                     </form>

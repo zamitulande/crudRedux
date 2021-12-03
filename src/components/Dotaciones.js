@@ -26,13 +26,13 @@ const Guardas = () => {
     return (
       <Fragment>
           <Link to={"/dotacion"}
-                className="btn btn-danger nuevo-post d-blok d-md-inline-block">Nueva dotacion</Link>
-          <h2 className="text-center my-5">Dotaciones Entregadas</h2>
-          {error ? <p className="font-weight alert-danger text-center">Hubo un Error</p> : null }
-          {cargando ? <p className="text-center">Cargando...</p> : null }
+               >Nueva dotacion</Link>
+          <h2>Dotaciones Entregadas</h2>
+          {error ? <p>Hubo un Error</p> : null }
+          {cargando ? <p>Cargando...</p> : null }
 
-          <table className="table table-striped">
-                <thead className="bg-primary table-dark">
+          <table>
+                <thead>
                     <tr>
                         <th scope="col">NOMBRE</th>
                         <th scope="col">Camisa</th>

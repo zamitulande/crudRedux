@@ -31,14 +31,14 @@ const Guardas = () => {
     return (
       <Fragment>
           <Link to={"/guarda/nuevo"}
-                className="btn btn-danger nuevo-post d-blok d-md-inline-block">Nuevo Guarda &#43;</Link>
-          <h2 className="text-center my-5">Listado de Guardas</h2>
+                >Nuevo Guarda &#43;</Link>
+          <h2>Listado de Guardas</h2>
 
-          {error ? <p className="font-weight alert-danger text-center">Hubo un Error</p> : null }
-          {cargando ? <p className="text-center">Cargando...</p> : null }   
+          {error ? <p>Hubo un Error</p> : null }
+          {cargando ? <p>Cargando...</p> : null }   
 
-          <table className="table table-striped">
-                <thead className="bg-primary table-dark">
+          <table>
+                <thead>
                     <tr>
                         <th scope="col">Cedula</th>
                         <th scope="col">Nombre</th>

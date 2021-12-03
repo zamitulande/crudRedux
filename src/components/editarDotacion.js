@@ -54,102 +54,93 @@ const EditarDotacion = () => {
    
 
     return (
-        <div className="row justify-content-center">
-        <div className="col-md-4">
-            <div className="card">
-                <div className="card-body">
+        <div>
+        <div>
+            <div>
+                <div>
                     
                     <form
                     
                         onSubmit={submitEditarDotacion}
                     >
 
-                    <div className="form-group">
+                    <div>
                             <label>Nombre</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                               
                                 name="nombre"
                                 value={nombre}
                                 onChange={onChangeFormulario}
                                 
                             />
                         </div>
-                    <div className="form-group">
+                    <div>
                             <label>Camisa</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                              
                                 name="camisa"
                                 value={camisa}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Pantalon </label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                               
                                 name="pantalon"
                                 value={pantalon}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Gorra</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                            
                                 name="gorra"
                                 value={gorra}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Zapatos</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                               
                                 name="zapatos"
                                 value={zapatos}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Corbata</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                                
                                 name="corbata"
                                 value={corbata}
                                onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Chaqueta</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                                
                                 name="chaqueta"
                                 value={chaqueta}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Oberol</label>
                             <input
-                                type="text"
-                                className="form-control"                                
+                                type="text"                                                              
                                 name="oberol"
                                 value={oberol}
                                 onChange={onChangeFormulario}
                             />
                         </div>
-                        <div className="form-group">
+                        <div>
                             <label>Fecha de entrega</label>
                             <input
-                                type="date"
-                                className="form-control"
+                                type="date"                                
                                 placeholder="cantidad"
                                 name="fecha"
                                 value={fecha}
@@ -159,7 +150,7 @@ const EditarDotacion = () => {
                            </div>
                              <button
                             type="submit"
-                            className="btn btn-primary font-weightbold text-uppercase d-block w-100">
+                            >
                                 Guardar Edicion
                           </button>
                         
