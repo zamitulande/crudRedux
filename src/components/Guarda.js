@@ -41,9 +41,9 @@ const Guarda = ({guarda}) => {
     }
 
     //funcio que redirige de forma programada
-    const redireccionarEdicion = () =>{
+    const redireccionarEdicion = (guarda) =>{
             dispatch(obtenerGuardaEditar(guarda));
-            history.push(`guarda/editar/${id}`)
+            history.push(`guarda/editar/${guarda.id}`)
     }
     return (
         <tr>

@@ -70,7 +70,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="nombre"
+                                name="nombre"
                                 value={nombre}
                                 onChange={e=>setNombre(e.target.value)}
                             />
@@ -80,7 +80,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="camisa"
+                                name="camisa"
                                 value={camisa}
                                 onChange={e=>setCamisa(e.target.value)}
                             />
@@ -90,7 +90,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="pantalon"
+                                name="pantalon"
                                 value={pantalon}
                                 onChange={e=>setPantalon(e.target.value)}
                             />
@@ -100,7 +100,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="gorra"
+                                name="gorra"
                                 value={gorra}
                                 onChange={e=>setGorra(e.target.value)}
                             />
@@ -110,7 +110,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="zapatos"
+                                name="zapatos"
                                 value={zapatos}
                                 onChange={e=>setZapatos(e.target.value)}
                             />
@@ -120,7 +120,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="corbata"
+                                name="corbata"
                                 value={corbata}
                                 onChange={e=>setCorbata(e.target.value)}
                             />
@@ -130,7 +130,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="chaqueta"
+                                name="chaqueta"
                                 value={chaqueta}
                                 onChange={e=>setChaqueta(e.target.value)}
                             />
@@ -140,7 +140,7 @@ const NuevaDotacion = ({history}) => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="oberol"
+                                name="oberol"
                                 value={oberol}
                                 onChange={e=>setOberol(e.target.value)}
                             />

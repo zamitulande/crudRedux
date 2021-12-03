@@ -20,7 +20,7 @@ const initialState={
     error: null,
     loading: false,
     guardaeliminar: null,
-    guardaEditar:null
+
 }
 export default function(state = initialState, action){
     switch(action.type){

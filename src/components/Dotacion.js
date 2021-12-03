@@ -39,7 +39,7 @@ const Dotacion = ({dotacion}) => {
     }
 
     //funcion que redireige de forma programda
-    const redireccionarEdicion = () =>{
+    const redireccionarEdicion = (dotacion) =>{
         dispatch(obtenerDotacionEditar(dotacion));
         history.push(`dotacion/editar/${id}`)
     }

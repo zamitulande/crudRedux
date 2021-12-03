@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from  'react-redux';
+import { editarGuardaAction } from '../actions/guardaAction';
 
 const EditarGuarda = () => {
 
@@ -9,6 +10,12 @@ const EditarGuarda = () => {
 
      //aplicar desttructuring
      const {cedula, nombre, eps, fondo, fecha}= guarda;
+
+     const submitEditarGuarda= e =>{
+         e.preventDefault();
+
+         editarGuardaAction();
+     }
     
     return ( 
         <div className="row justify-content-center">
@@ -18,7 +25,9 @@ const EditarGuarda = () => {
                     <h2 className="text-center mb-4 font-weight-bold">
                         Editar Informacion del Guarda
                     </h2>
-                    <form>
+                    <form
+                        onSubmit={submitEditarGuarda}
+                    >
                     <div className="form-group">
                             <label>Cedula</label>
                             <input

@@ -18,7 +18,9 @@ import{
     DOTACION_ELIMINADO_EXITO,
     DOTACION_ELIMINADO_ERROR,
     OBTENER_GUARDA_EDITAR,
-    OBTENER_DOTACION_EDITAR
+    OBTENER_DOTACION_EDITAR,
+    COMENZAR_EDICION_DOTACION,
+    COMENZAR_EDICION_GUARDA
 
 } from '../types';
 import clienteAxios from '../config/axios';
@@ -313,3 +315,50 @@ const obtenerDotacionActionEditar = dotacion => ({
     type: OBTENER_DOTACION_EDITAR,
     payload: dotacion
 })
+
+
+//-----------------------------------------------------------------------------------------------------------------
+
+        //editar el registro del guarda en al api
+
+export function editarGuardaAction(guarda){
+    return async (dispatch)=>{
+        dispatch(editarGuarda(guarda))
+
+        try {
+           await clienteAxios.put(`/guarda/${guarda.id}`, guarda);
+            
+        } catch (error) {
+            
+        }
+    }
+}
+
+const editarGuarda= guarda=>({
+    type: COMENZAR_EDICION_GUARDA,
+    payload: guarda
+})
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+
+
+            //editt el registro de la dotacion en la api
+
+export function editarDotacionAction(dotacion) {
+    return async (dispatch) => {
+        dispatch( editarDotacion() );
+
+        try {
+            await clienteAxios.put(`/dotacion/${dotacion.id}`, dotacion);    
+            
+        } catch (error) {
+            console.log(error);
+           
+        }
+    }
+}
+const editarDotacion = () => ({
+    type: COMENZAR_EDICION_DOTACION
+});

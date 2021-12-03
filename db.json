@@ -19,28 +19,16 @@
   ],
   "dotacion": [
     {
-      "nombre": "1",
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
-      "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-12-23",
-      "id": 2
-    },
-    {
       "nombre": "rocio",
-      "camisa": "1",
-      "pantalon": "1",
-      "gorra": "1",
-      "zapatos": "1",
-      "corbata": "1",
-      "chaqueta": "1",
-      "oberol": "1",
-      "fecha": "2021-12-23",
-      "id": 3
+      "camisa": "uno",
+      "pantalon": "uno",
+      "gorra": "uno",
+      "zapatos": "uno",
+      "corbata": "uno",
+      "chaqueta": "uno",
+      "oberol": "uno",
+      "fecha": "2021-12-29",
+      "id": 1
     }
   ]
 }

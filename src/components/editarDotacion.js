@@ -1,16 +1,51 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from  'react-redux';
+import { editarDotacionAction } from '../actions/guardaAction';
 
 const EditarDotacion = () => {
 
-    //dotacion a editar
-    const dotacion=useSelector(state => state.dotacion.dotacioneditar);
+    
+    // nuevo state de dotacion
+    const [ dotacion, setDotacion] = useState({
+        nombre:'', 
+        camisa:'', 
+        pantalon:'', 
+        gorra:'', 
+        corbata:'', 
+        chaqueta:'', 
+        fecha:'', 
+        oberol:'',
+        zapatos: '',
+        id: ''
+    })
 
-    if(!dotacion) return null;
+    // producto a editar
+    const dotacioneditar = useSelector(state => state.dotacion.dotacioneditar);
+  
+    // llenar el state automaticamente
+    useEffect( () => {
+        setDotacion(dotacioneditar);
+    }, [dotacioneditar]);
 
-    //aplicar desttructuring
-    const {nombre, camisa, pantalon, gorra, corbata, oberol,  zapatos, chaqueta, fecha}= dotacion;
+    // Leer los datos del formulario
+    const onChangeFormulario = e => {
+        setDotacion({
+            ...dotacion,
+            [e.target.name] : e.target.value
+        })
+    }
+
+
+    const {nombre, camisa, pantalon, gorra, corbata, chaqueta, fecha, oberol, zapatos} = dotacion;
+
+    const submitEditarDotacion = e => {
+        e.preventDefault();
+
+        editarDotacionAction(dotacion)
+    
+        
+    }
    
 
     return (
@@ -19,15 +54,19 @@ const EditarDotacion = () => {
             <div className="card">
                 <div className="card-body">
                     
-                    <form>
+                    <form
+                    
+                        onSubmit={submitEditarDotacion}
+                    >
 
                     <div className="form-group">
                             <label>Nombre</label>
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="nombre"
+                                name="nombre"
                                 value={nombre}
+                                onChange={onChangeFormulario}
                                 
                             />
                         </div>
@@ -36,8 +75,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="camisa"
+                                name="camisa"
                                 value={camisa}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -45,8 +85,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="pantalon"
+                                name="pantalon"
                                 value={pantalon}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -54,8 +95,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="gorra"
+                                name="gorra"
                                 value={gorra}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -63,8 +105,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="zapatos"
+                                name="zapatos"
                                 value={zapatos}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -72,8 +115,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="corbata"
+                                name="corbata"
                                 value={corbata}
+                               onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -81,8 +125,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="chaqueta"
+                                name="chaqueta"
                                 value={chaqueta}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -90,8 +135,9 @@ const EditarDotacion = () => {
                             <input
                                 type="text"
                                 className="form-control"                                
-                                nombre="oberol"
+                                name="oberol"
                                 value={oberol}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -100,8 +146,10 @@ const EditarDotacion = () => {
                                 type="date"
                                 className="form-control"
                                 placeholder="cantidad"
-                                nombre="fecha"
+                                name="fecha"
                                 value={fecha}
+                               onChange={onChangeFormulario}
+                                
                            />
                            </div>
                              <button

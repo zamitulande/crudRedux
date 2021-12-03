@@ -69,7 +69,7 @@ const NuevoGuarda = ({history}) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Cedula del Guarda"
-                                    nombre="cedula"
+                                    name="cedula"
                                     value={cedula}
                                     onChange={e=>setCedula(e.target.value)}
                                 />
@@ -80,7 +80,7 @@ const NuevoGuarda = ({history}) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Nombre del  Guarda"
-                                    nombre="nombre"
+                                    name="nombre"
                                     value={nombre}
                                     onChange={e=>setNombre(e.target.value)}
                                 />
@@ -91,7 +91,7 @@ const NuevoGuarda = ({history}) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="EPS del Guarda"
-                                    nombre="eps"
+                                    name="eps"
                                     value={eps}
                                     onChange={e=>setEps(e.target.value)}
                                 />
@@ -102,7 +102,7 @@ const NuevoGuarda = ({history}) => {
                                     type="text"
                                     className="form-control"
                                     placeholder="Fondo Pensio del Guarda"
-                                    nombre="fondo"
+                                    name="fondo"
                                     value={fondo}
                                     onChange={e=>setFondo(e.target.value)}
                                 />
@@ -113,7 +113,7 @@ const NuevoGuarda = ({history}) => {
                                     type="date"
                                     className="form-control"
                                     placeholder="Fondo Pension del Guarda"
-                                    nombre="fecha"
+                                    name="fecha"
                                     value={fecha}
                                     onChange={e=>setFecha(e.target.value)}
                                 />
