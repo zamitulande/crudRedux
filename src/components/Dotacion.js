@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 //redux
 import { useDispatch } from 'react-redux';
-import { borrarDotacionAction, obtenerDotacionEditar } from '../actions/guardaAction';
+import { borrarDotacionAction, obtenerDotacionEditar } from '../actions/dotacionAction';
 
 
 const Dotacion = ({dotacion}) => {

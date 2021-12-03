@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+
 //importar action de redux
-import {crearNuevoDotacionAction} from '../actions/guardaAction';
+import {crearNuevoDotacionAction} from '../actions/dotacionAction';
+import { mostrarAlerta, ocultarAlertaAction } from '../actions/alertaAction';
 
 const NuevaDotacion = ({history}) => {
 
@@ -24,8 +26,10 @@ const NuevaDotacion = ({history}) => {
     //utlizar use dispatch y te crea una funcion
     const dispatch = useDispatch();
 
+    //acceder al state del store o sacarlos del state para mostrarlo en interfaz
     const cargando = useSelector(state=> state.dotacion.loading);
     const error = useSelector(state=>state.dotacion.error);
+    const alerta = useSelector(state=>state.alerta.alerta);
 
     //mandar a llamar el action de productoAction
     const agregarDotacion=(dotacion)=> dispatch(crearNuevoDotacionAction(dotacion));
@@ -36,10 +40,18 @@ const NuevaDotacion = ({history}) => {
 
         if(nombre.trim() === '' || camisa.trim() === '' || pantalon.trim() === '' || gorra.trim() === '' 
         || corbata.trim() ==='' || chaqueta.trim() ==='' || oberol.trim() ===''){
+
+            const respuesta = {
+                msg: 'Todos los campor son obligatorios',
+                classes:'alert alert-danger text-center'
+            }
+
+            dispatch (mostrarAlerta(respuesta));
             return;
         }
 
         //si no hay errores
+        dispatch(ocultarAlertaAction());
 
         //crear el nuevo guarda
         agregarDotacion({
@@ -62,6 +74,11 @@ const NuevaDotacion = ({history}) => {
         <div className="col-md-4">
             <div className="card">
                 <div className="card-body">
+                <h2 className="text-center mb-4 font-weight-bold">
+                            Agregar Nuevo Guarda
+                        </h2>
+                        
+                        {alerta ? <p className={alerta.classes}>{alerta.msg}</p> :  null}
                     
                     <form
                             onSubmit={submitNuevaDotacion}

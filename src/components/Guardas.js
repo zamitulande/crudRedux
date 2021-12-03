@@ -19,7 +19,7 @@ const Guardas = () => {
         cargarGuardas();
 
         
-    }, []);
+    }, [dispatch]);
 
 
     //obtener el state que se obtubo con el codigo de los reducers y el action

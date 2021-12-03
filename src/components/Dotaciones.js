@@ -4,7 +4,7 @@ import Dotacion from './Dotacion';
 
 //redux
 import { useSelector, useDispatch } from 'react-redux';
-import { obtenerDotacionAction } from '../actions/guardaAction';
+import { obtenerDotacionAction } from '../actions/dotacionAction';
 
 
 const Guardas = () => {
@@ -17,7 +17,7 @@ const Guardas = () => {
         const cargarDotacion=()=> dispatch(obtenerDotacionAction());
         cargarDotacion();
        
-    }, [])
+    }, [dispatch])
 
     //obtener el state que se obtubo con el codigo de los reducers y el action
     const dotaciones = useSelector(state => state.dotacion.dotacion);

@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+
 //importar action de redux
 import {crearNuevoGuardaAction} from '../actions/guardaAction';
+import { mostrarAlerta, ocultarAlertaAction } from '../actions/alertaAction';
 
 const NuevoGuarda = ({history}) => {
 
@@ -19,9 +21,10 @@ const NuevoGuarda = ({history}) => {
     //utlizar use dispatch y te crea una funcion
     const dispatch = useDispatch();
 
-    //acceder al state del store
+    //acceder al state del store o sacarlos del state para mostrarlo en interfaz
     const cargando = useSelector(state=> state.guardas.loading);
     const error = useSelector(state=>state.guardas.error);
+    const alerta = useSelector(state=>state.alerta.alerta);
 
     //mandar a llamar el action de productoAction
     const agregarGuarda=(guarda)=> dispatch(crearNuevoGuardaAction(guarda));
@@ -32,10 +35,18 @@ const NuevoGuarda = ({history}) => {
 
         //validar formulario
         if(cedula.trim() === '' || nombre.trim() === '' || eps.trim() === '' || fondo.trim() ===''){
+
+            const respuesta = {
+                msg: 'Todos los campor son obligatorios',
+                classes:'alert alert-danger text-center'
+            }
+
+            dispatch (mostrarAlerta(respuesta));
             return;
         }
 
         //si no hay errores
+        dispatch(ocultarAlertaAction());
 
         //crear el nuevo guarda
         agregarGuarda({
@@ -60,6 +71,8 @@ const NuevoGuarda = ({history}) => {
                         <h2 className="text-center mb-4 font-weight-bold">
                             Agregar Nuevo Guarda
                         </h2>
+
+                        {alerta ? <p className={alerta.classes}>{alerta.msg}</p> :  null}
                         
                         <form
                             onSubmit={submitNuevoGuarda}

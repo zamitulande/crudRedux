@@ -25,7 +25,7 @@ const initialState={
     guardaEditar: null
 
 }
-export default function(state = initialState, action){
+export default function foo(state = initialState, action){
     switch(action.type){
         case AGREGAR_GUARDA:
         case COMENZAR_DESCARGA_GUARDA:

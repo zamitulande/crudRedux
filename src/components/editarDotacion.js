@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from  'react-redux';
-import { editarDotacionAction } from '../actions/guardaAction';
+import { editarDotacionAction } from '../actions/dotacionAction';
 import { useHistory } from 'react-router';
 
 const EditarDotacion = () => {
@@ -26,7 +26,7 @@ const EditarDotacion = () => {
 
     // producto a editar
     const dotacioneditar = useSelector(state => state.dotacion.dotacioneditar);
-  
+    
     // llenar el state automaticamente
     useEffect( () => {
         setDotacion(dotacioneditar);

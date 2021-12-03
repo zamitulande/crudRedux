@@ -1,14 +1,6 @@
 {
   "guardas": [
     {
-      "cedula": "35460488",
-      "nombre": "LIBIA MARIA TULANDE ANTE",
-      "eps": "NUEVA EPS",
-      "fondo": "PORVENIR",
-      "fecha": "2022-01-08",
-      "id": 1
-    },
-    {
       "cedula": "1061730128",
       "nombre": "HULMAR ZAMI TULANDE",
       "eps": "SANITAS",
@@ -31,31 +23,11 @@
       "fondo": "COLFONDOS",
       "fecha": "2021-11-28",
       "id": 4
-    },
-    {
-      "cedula": "2546898",
-      "nombre": "JUAN GREGORIO",
-      "eps": "ASMET",
-      "fondo": "COLPENSIONES",
-      "fecha": "2021-12-21",
-      "id": 5
     }
   ],
   "dotacion": [
     {
-      "nombre": "juan",
-      "camisa": "1",
-      "pantalon": "uno",
-      "gorra": "uno",
-      "zapatos": "uno",
-      "corbata": "uno",
-      "chaqueta": "uno",
-      "oberol": "un",
-      "fecha": "2021-12-29",
-      "id": 1
-    },
-    {
-      "nombre": "MARIANO JUAN",
+      "nombre": "MARIANO ",
       "camisa": "1",
       "pantalon": "1",
       "gorra": "1",
