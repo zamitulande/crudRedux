@@ -2,8 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from  'react-redux';
 import { editarDotacionAction } from '../actions/guardaAction';
+import { useHistory } from 'react-router';
 
 const EditarDotacion = () => {
+
+    const dispatch=useDispatch();
+    const history = useHistory();
 
     
     // nuevo state de dotacion
@@ -42,8 +46,9 @@ const EditarDotacion = () => {
     const submitEditarDotacion = e => {
         e.preventDefault();
 
-        editarDotacionAction(dotacion)
-    
+        dispatch (editarDotacionAction(dotacion));
+
+        history.push('/dotaciones');
         
     }
    
@@ -161,7 +166,7 @@ const EditarDotacion = () => {
                     </form>
                     <nav>
                         <div >
-                            <h1><Link to={'/dotaciones'} >Volver</Link></h1>
+                            <h1><Link to={'/dotaciones'} >Cancelar</Link></h1>
                         </div>
 
             

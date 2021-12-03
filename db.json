@@ -1,34 +1,70 @@
 {
   "guardas": [
     {
-      "cedula": "1",
-      "nombre": "1",
-      "eps": "1",
-      "fondo": "1",
-      "fecha": "2021-12-19",
+      "cedula": "35460488",
+      "nombre": "LIBIA MARIA TULANDE ANTE",
+      "eps": "NUEVA EPS",
+      "fondo": "PORVENIR",
+      "fecha": "2022-01-08",
       "id": 1
     },
     {
-      "cedula": "5",
-      "nombre": "5",
-      "eps": "5",
-      "fondo": "5",
-      "fecha": "2021-12-25",
+      "cedula": "1061730128",
+      "nombre": "HULMAR ZAMI TULANDE",
+      "eps": "SANITAS",
+      "fondo": "PORVENIR",
+      "fecha": "2020-01-25",
       "id": 2
+    },
+    {
+      "cedula": "1061795855",
+      "nombre": "KATERINE MUÑOZ TULANDE ANTE",
+      "eps": "SANITAS",
+      "fondo": "PORVENIR",
+      "fecha": "2021-12-23",
+      "id": 3
+    },
+    {
+      "cedula": "6899888",
+      "nombre": "AGRIPINO GOMEZ",
+      "eps": "SANITAS",
+      "fondo": "COLFONDOS",
+      "fecha": "2021-11-28",
+      "id": 4
+    },
+    {
+      "cedula": "2546898",
+      "nombre": "JUAN GREGORIO",
+      "eps": "ASMET",
+      "fondo": "COLPENSIONES",
+      "fecha": "2021-12-21",
+      "id": 5
     }
   ],
   "dotacion": [
     {
-      "nombre": "rocio",
-      "camisa": "uno",
+      "nombre": "juan",
+      "camisa": "1",
       "pantalon": "uno",
       "gorra": "uno",
       "zapatos": "uno",
       "corbata": "uno",
       "chaqueta": "uno",
-      "oberol": "uno",
+      "oberol": "un",
       "fecha": "2021-12-29",
       "id": 1
+    },
+    {
+      "nombre": "MARIANO JUAN",
+      "camisa": "1",
+      "pantalon": "1",
+      "gorra": "1",
+      "zapatos": "1",
+      "corbata": "1",
+      "chaqueta": "1",
+      "oberol": "1",
+      "fecha": "2021-12-25",
+      "id": 2
     }
   ]
 }

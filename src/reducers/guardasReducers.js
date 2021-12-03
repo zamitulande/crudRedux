@@ -8,7 +8,9 @@ import{
     OBTENER_GUARDA_ELIMINAR,
     GUARDA_ELIMINADO_EXITO,
     GUARDA_ELIMINADO_ERROR,
-    OBTENER_GUARDA_EDITAR
+    OBTENER_GUARDA_EDITAR,
+    GUARDA_EDITADO_EXITO,
+    GUARDA_EDITADO_ERROR
    
 
 } from '../types';
@@ -20,6 +22,7 @@ const initialState={
     error: null,
     loading: false,
     guardaeliminar: null,
+    guardaEditar: null
 
 }
 export default function(state = initialState, action){
@@ -39,6 +42,7 @@ export default function(state = initialState, action){
         case AGREGAR_GUARDA_ERROR:
         case DESCARGA_GUARDA_ERROR:
         case GUARDA_ELIMINADO_ERROR:
+        case GUARDA_EDITADO_ERROR:
             return{
                 ...state,
                 loading: false,
@@ -66,7 +70,14 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 guardaEditar: action.payload
-
+            }
+        case GUARDA_EDITADO_EXITO:
+            return{
+                ...state,
+                guardaEditar: null,
+                guardas:state.guardas.map(
+                    guarda=> guarda.id === action.payload.id ? guarda = action.payload : guarda
+                )
             }
         
         default:

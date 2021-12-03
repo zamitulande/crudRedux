@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {useDispatch, useSelector} from  'react-redux';
 import { editarGuardaAction } from '../actions/guardaAction';
+import { useHistory } from 'react-router';
 
 const EditarGuarda = () => {
 
+    const history= useHistory();
+
+    const dispatch = useDispatch();
+
+    // nuevo state de guardas
+    const [guarda, setGuarda] = useState({
+        cedula:'',
+        nombre:'',
+        eps:'',
+        fondo:'',
+        fecha:''
+    })
+
     //guarda a editar
-    const guarda=useSelector(state => state.guardas.guardaEditar);
+    const guardaeditar=useSelector(state => state.guardas.guardaEditar);
+
+    // llenar el state automaticamente
+    useEffect(() => {
+        setGuarda(guardaeditar);
+      
+    }, [guardaeditar]);
+
+    //leer los datos del formulario
+    const onChangeFormulario=e=>{
+        setGuarda({
+            ...guarda,
+            [e.target.name] : e.target.value
+        })
+    }
 
      //aplicar desttructuring
      const {cedula, nombre, eps, fondo, fecha}= guarda;
@@ -14,7 +42,8 @@ const EditarGuarda = () => {
      const submitEditarGuarda= e =>{
          e.preventDefault();
 
-         editarGuardaAction();
+         dispatch (editarGuardaAction(guarda)) ;
+         history.push('/guarda');
      }
     
     return ( 
@@ -34,8 +63,9 @@ const EditarGuarda = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Cedula del Guarda"
-                                nombre="cedula"
+                                name="cedula"
                                 value={cedula}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -44,8 +74,9 @@ const EditarGuarda = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Nombre del  Guarda"
-                                nombre="nombre"
+                                name="nombre"
                                 value={nombre}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -54,8 +85,9 @@ const EditarGuarda = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="EPS del Guarda"
-                                nombre="eps"
+                                name="eps"
                                 value={eps}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -64,8 +96,9 @@ const EditarGuarda = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Fondo Pensio del Guarda"
-                                nombre="fondo"
+                                name="fondo"
                                 value={fondo}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                         <div className="form-group">
@@ -74,8 +107,9 @@ const EditarGuarda = () => {
                                 type="date"
                                 className="form-control"
                                 placeholder="Fondo Pension del Guarda"
-                                nombre="fecha"
+                                name="fecha"
                                 value={fecha}
+                                onChange={onChangeFormulario}
                             />
                         </div>
                     
@@ -88,7 +122,7 @@ const EditarGuarda = () => {
                 </div>
                 <nav>
             <div >
-                <h1><Link to={'/guarda'} >Volver</Link></h1>
+                <h1><Link to={'/guarda'} >Cancelar</Link></h1>
             </div>
 
             

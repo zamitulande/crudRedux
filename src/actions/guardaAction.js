@@ -20,7 +20,9 @@ import{
     OBTENER_GUARDA_EDITAR,
     OBTENER_DOTACION_EDITAR,
     COMENZAR_EDICION_DOTACION,
-    COMENZAR_EDICION_GUARDA
+    COMENZAR_EDICION_GUARDA,
+    GUARDA_EDITADO_EXITO,
+    DOTACION_EDITADO_EXITO
 
 } from '../types';
 import clienteAxios from '../config/axios';
@@ -326,8 +328,14 @@ export function editarGuardaAction(guarda){
         dispatch(editarGuarda(guarda))
 
         try {
-           await clienteAxios.put(`/guarda/${guarda.id}`, guarda);
-            
+           await clienteAxios.put(`/guardas/${guarda.id}`, guarda);
+            dispatch(editarGuardaExito(guarda));
+            //si se elimina, mostrar la alerta
+            Swal.fire(
+                'Editado',
+                'El guarda se Edito correctamente.',
+                'success'
+              )
         } catch (error) {
             
         }
@@ -336,7 +344,11 @@ export function editarGuardaAction(guarda){
 
 const editarGuarda= guarda=>({
     type: COMENZAR_EDICION_GUARDA,
-    payload: guarda
+    
+});
+const editarGuardaExito = guarda => ({
+    type:GUARDA_EDITADO_EXITO,
+    payload:guarda
 })
 
 
@@ -352,7 +364,13 @@ export function editarDotacionAction(dotacion) {
 
         try {
             await clienteAxios.put(`/dotacion/${dotacion.id}`, dotacion);    
-            
+            dispatch(editarDotacionExito(dotacion));
+            //si se elimina, mostrar la alerta
+            Swal.fire(
+                'Editado',
+                'La dotacion se Edito correctamente.',
+                'success'
+              )
         } catch (error) {
             console.log(error);
            
@@ -362,3 +380,7 @@ export function editarDotacionAction(dotacion) {
 const editarDotacion = () => ({
     type: COMENZAR_EDICION_DOTACION
 });
+const editarDotacionExito= dotacion=> ({
+    type: DOTACION_EDITADO_EXITO,
+    payload: dotacion
+})

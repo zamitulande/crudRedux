@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -165,6 +166,13 @@ const NuevaDotacion = ({history}) => {
                     </form>
                     {cargando ? <p>Cargando..</p> : null}
                     {error ? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null}
+                    <nav>
+                        <div >
+                            <h1><Link to={'/dotaciones'} >Cancelar</Link></h1>
+                        </div>
+
+            
+                  </nav>
                 </div>
                         
             </div>

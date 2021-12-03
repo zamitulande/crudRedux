@@ -8,7 +8,9 @@ import{
     OBTENER_DOTACION_ELIMINAR,
     DOTACION_ELIMINADO_EXITO,
     DOTACION_ELIMINADO_ERROR,
-    OBTENER_DOTACION_EDITAR
+    OBTENER_DOTACION_EDITAR,
+    DOTACION_EDITADO_EXITO,
+    DOTACION_EDITADO_ERROR
 
 } from '../types';
 
@@ -38,6 +40,7 @@ export default function(state = initialState, action){
         case AGREGAR_DOTACION_ERROR:
         case DESCARGAR_DOTACION_ERROR: 
         case DOTACION_ELIMINADO_ERROR: 
+        case DOTACION_EDITADO_ERROR:
             return{
                 ...state,
                 loading: false,
@@ -65,6 +68,14 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 dotacioneditar: action.payload
+            }
+        case DOTACION_EDITADO_EXITO:
+            return{
+                ...state,
+                dotacioneditar: null,
+                dotacion: state.dotacion.map(
+                    dotacion => dotacion.id === action.payload.id ? dotacion = action.payload : dotacion
+                )
             }
 
         default:
